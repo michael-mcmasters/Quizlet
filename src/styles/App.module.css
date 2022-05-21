@@ -1,12 +1,15 @@
 .container {
   background-color: #DEF1F1;
   display: flex;
-  justify-content: row;
+  justify-content: space-between;
 }
 
 .leftSideContainer {
-  align-self: flex-start;   /* Needed for position sticky to work inside a flexbox. Source - https://stackoverflow.com/questions/44446671/my-position-sticky-element-isnt-sticky-when-using-flexbox */
+  align-self: flex-start;  /* Needed for position sticky to work inside a flexbox. Source - https://stackoverflow.com/questions/44446671/my-position-sticky-element-isnt-sticky-when-using-flexbox */
   position: sticky;
   top: 0;
-  margin-right: 40px;
+}
+
+.center {
+  border: 1px solid red;
 }

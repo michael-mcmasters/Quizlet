@@ -1,4 +1,6 @@
 import React from 'react';
+import Question from './Question';
+import styles from "../styles/QuestionList.module.css"
 
 interface Props {
   
@@ -6,13 +8,8 @@ interface Props {
 
 function QuestionsList(props: Props) {
   return (
-    <div>
-      <div>
-      QuestionListOne
-      </div>
-      <div>
-        QuestionListTwo
-      </div>
+    <div className={styles.container}>
+      <Question />
     </div>
   );
 }
