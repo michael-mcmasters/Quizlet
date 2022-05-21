@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import Question from './components/Question'
-import QuizList from './components/QuizList'
+import Sidebar from './components/Sidebar'
 import QuestionsList from './components/QuestionsList'
 import styled from "./styles/App.module.css";
 
@@ -9,7 +9,7 @@ function App() {
   return (
     <div className={styled.container}>
       <div className={styled.leftSideContainer}>
-        <QuizList />
+        <Sidebar />
       </div>
       <div className={styled.center}>
         <QuestionsList />
