@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import questionsJson from '../resources/questions.json'
 import Question from './Question';
 import styles from "../styles/QuestionList.module.css"
@@ -9,7 +9,7 @@ interface Props {
 
 function QuestionsList(props: Props) {
   
-  const answers: string[] = questionsJson.questions.map(q => q.answer);
+  const answers: string[] = useMemo(() => questionsJson.questions.map(q => q.answer), [questionsJson]);
   
   return (
     <div className={styles.container}>

@@ -73,7 +73,7 @@ function getRandomAnswers([...answers]: string[], correctAnswer: string) {
     return answer;
   }
   
-  return [getRandomUniqueAnswer(), getRandomUniqueAnswer(), getRandomUniqueAnswer(), getRandomUniqueAnswer() ];
+  return [ getRandomUniqueAnswer(), getRandomUniqueAnswer(), getRandomUniqueAnswer(), getRandomUniqueAnswer() ];
 }
 
 
