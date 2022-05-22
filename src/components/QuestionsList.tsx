@@ -9,14 +9,16 @@ interface Props {
 
 function QuestionsList(props: Props) {
   
+  const answers: string[] = questionsJson.questions.map(q => q.answer);
+  
   return (
     <div className={styles.container}>
       {questionsJson.questions.map(q => (
         <Question
           key={q.uuid}
           question={q.question}
-          answer={q.answer}
-          answerOptions={["a possible answer"]}
+          correctAnswer={q.answer}
+          allAnswers={answers}
         />
       ))}
     </div>
