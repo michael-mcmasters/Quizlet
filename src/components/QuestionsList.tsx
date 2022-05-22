@@ -11,6 +11,8 @@ function QuestionsList(props: Props) {
     <div className={styles.container}>
       <Question />
       <Question />
+      <Question />
+      <Question />
     </div>
   );
 }
