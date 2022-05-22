@@ -14,9 +14,6 @@ function App() {
       <div className={styles.center}>
         <QuestionsList />
       </div>
-      <div>
-        ok
-      </div>
     </div>
   );
 }

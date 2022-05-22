@@ -10,6 +10,7 @@ function QuestionsList(props: Props) {
   return (
     <div className={styles.container}>
       <Question />
+      <Question />
     </div>
   );
 }

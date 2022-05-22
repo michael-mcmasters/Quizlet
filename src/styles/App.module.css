@@ -1,7 +1,6 @@
 .container {
   background-color: #DEF1F1;
   display: flex;
-  justify-content: space-between;
 }
 
 .leftSideContainer {
@@ -11,5 +10,5 @@
 }
 
 .center {
-  border: 1px solid red;
+  margin: 0 auto;
 }

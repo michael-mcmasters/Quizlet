@@ -1,26 +1,14 @@
 import React from 'react';
+import styles from "../styles/Question.module.css"
 
 interface Props {
   
 }
 
-const style = {
-  fontSize: "10rem"
-}
-
 function Question(props: Props) {
   return (
-    <div>
-      <div style={style}>hola</div>
-      <div style={style}>hola</div>
-      <div style={style}>hola</div>
-      <div style={style}>hola</div>
-      <div style={style}>hola</div>
-      <div style={style}>hola</div>
-      <div style={style}>hola</div>
-      <div style={style}>hola</div>
-      <div style={style}>hola</div>
-      <div style={style}>hola</div>
+    <div className={styles.container}>
+      hi
     </div>
   );
 }
