@@ -34,38 +34,27 @@ function Question(props: Props) {
   }
   
   
-  // A prodiver (such as Google) signs a website's certificate, which is given to the browser when it visits that page. The browser will check with the Certificate Authority to determine if the website's certificate is signed and is valid. And use this for an encrypted connection (HTTPS)
-  
-  
   return (
     <div className={styles.container}>
       <div className={styles.question}>{props.question}</div>
 
       <div className={styles.answerContainer} onClick={() => handleClickAnswer(0)}>
-        <div>
-          A.
-        </div>
+        <div>A.</div>
         <div className={styles.answer}>{answers[0]}</div>
       </div>
       
       <div className={styles.answerContainer} onClick={() => handleClickAnswer(1)}>
-        <div>
-          B.
-        </div>
+        <div>B.</div>
         <div className={styles.answer}>{answers[1]}</div>
       </div>
       
       <div className={styles.answerContainer} onClick={() => handleClickAnswer(2)}>
-        <div>
-          C.
-        </div>
+        <div>C.</div>
         <div className={styles.answer}>{answers[2]}</div>
       </div>
       
       <div className={styles.answerContainer} onClick={() => handleClickAnswer(3)}>
-        <div>
-          D.
-        </div>
+        <div>D.</div>
         <div className={styles.answer}>{answers[3]}</div>
       </div>
     </div>
