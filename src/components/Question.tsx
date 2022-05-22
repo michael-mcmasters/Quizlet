@@ -10,14 +10,28 @@ interface Props {
 function Question(props: Props) {
   
   const [answers, setAnswers] = useState<string[]>([])
+  const [correctAnswerIndex, setCorrectAnswerIndex] = useState<number>();
+  
   
   useEffect(() => {
     (function generateAnswers() {
-      const generatedAnswers: string[] = getRandomAnswers(props.allAnswers);
-      generatedAnswers[getRandomIndex(generatedAnswers.length)] = props.correctAnswer.toUpperCase();
-      setAnswers(generatedAnswers);
+      const answers: string[] = getRandomAnswers(props.allAnswers);
+      const correctAnswerIndex: number = getRandomIndex(answers.length);
+      answers[correctAnswerIndex] = props.correctAnswer.toUpperCase();
+      
+      setCorrectAnswerIndex(correctAnswerIndex);
+      setAnswers(answers);
     })();
   }, [props.allAnswers])
+  
+  
+  function handleClickAnswer(clickedIndex: number) {
+    if (clickedIndex === correctAnswerIndex) {
+      console.log("correct!");
+    } else {
+      console.log("wrong");
+    }
+  }
   
   
   // A prodiver (such as Google) signs a website's certificate, which is given to the browser when it visits that page. The browser will check with the Certificate Authority to determine if the website's certificate is signed and is valid. And use this for an encrypted connection (HTTPS)
@@ -27,28 +41,28 @@ function Question(props: Props) {
     <div className={styles.container}>
       <div className={styles.question}>{props.question}</div>
 
-      <div className={styles.answerContainer} onClick={() => console.log("clicked")}>
+      <div className={styles.answerContainer} onClick={() => handleClickAnswer(0)}>
         <div>
           A.
         </div>
         <div className={styles.answer}>{answers[0]}</div>
       </div>
       
-      <div className={styles.answerContainer}>
+      <div className={styles.answerContainer} onClick={() => handleClickAnswer(1)}>
         <div>
           B.
         </div>
         <div className={styles.answer}>{answers[1]}</div>
       </div>
       
-      <div className={styles.answerContainer}>
+      <div className={styles.answerContainer} onClick={() => handleClickAnswer(2)}>
         <div>
           C.
         </div>
         <div className={styles.answer}>{answers[2]}</div>
       </div>
       
-      <div className={styles.answerContainer}>
+      <div className={styles.answerContainer} onClick={() => handleClickAnswer(3)}>
         <div>
           D.
         </div>
@@ -67,7 +81,7 @@ function getRandomAnswers([...answers]: string[]) {
     answers.splice(index, 1);
     return answer;
   }
-  return [ getRandomUniqueAnswer(), getRandomUniqueAnswer(), getRandomUniqueAnswer(), getRandomUniqueAnswer() ];
+  return [getRandomUniqueAnswer(), getRandomUniqueAnswer(), getRandomUniqueAnswer(), getRandomUniqueAnswer() ];
 }
 
 
