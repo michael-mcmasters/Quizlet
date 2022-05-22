@@ -2,8 +2,8 @@
   "questions": [
     {
       "uuid": 0,
-      "question": "who?",
-      "answer": "one"
+      "question": "What is a Certificate Authority?",
+      "answer": "A prodiver (such as Google) signs a website's certificate, which is given to the browser when it visits that page. The browser will check with the Certificate Authority to determine if the website's certificate is signed and is valid. And use this for an encrypted connection (HTTPS)"
     },
     {
       "uuid": 1,
@@ -19,6 +19,11 @@
       "uuid": 3,
       "question": "when?",
       "answer": "four"
+    },
+    {
+      "uuid": 4,
+      "question": "why?",
+      "answer": "five"
     }
   ]
 }

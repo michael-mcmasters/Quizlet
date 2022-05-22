@@ -15,12 +15,12 @@ function Question(props: Props) {
   
   useEffect(() => {
     (function generateAnswers() {
-      const answers: string[] = getRandomAnswers(props.allAnswers);
+      const answers: string[] = getRandomAnswers(props.allAnswers, props.correctAnswer);
       const correctAnswerIndex: number = getRandomIndex(answers.length);
       answers[correctAnswerIndex] = props.correctAnswer.toUpperCase();
       
-      setCorrectAnswerIndex(correctAnswerIndex);
       setAnswers(answers);
+      setCorrectAnswerIndex(correctAnswerIndex);
     })();
   }, [props.allAnswers])
   
@@ -74,13 +74,16 @@ function Question(props: Props) {
 
 
 // Returns an array of unique answers (no duplicates). Param is copied so that passed array is not modified.
-function getRandomAnswers([...answers]: string[]) {
+function getRandomAnswers([...answers]: string[], correctAnswer: string) {
+  answers.splice(answers.findIndex(a => a === correctAnswer), 1);
+  
   const getRandomUniqueAnswer = (): string => {
     const index: number = getRandomIndex(answers.length);
     const answer = answers[index];
     answers.splice(index, 1);
     return answer;
   }
+  
   return [getRandomUniqueAnswer(), getRandomUniqueAnswer(), getRandomUniqueAnswer(), getRandomUniqueAnswer() ];
 }
 
