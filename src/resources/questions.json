@@ -6,24 +6,369 @@
       "answer": "A prodiver (such as Google) signs a website's certificate, which is given to the browser when it visits that page. The browser will check with the Certificate Authority to determine if the website's certificate is signed and is valid. And use this for an encrypted connection (HTTPS)"
     },
     {
-      "uuid": 1,
-      "question": "what?",
-      "answer": "two"
+      "uuid": 5,
+      "question": "What are the 4 principles of Object Oriented Programming?",
+      "answer": "A PIE. Abstraction, Polymorphism, Inheritance, Encapsulation"
     },
     {
-      "uuid": 2,
-      "question": "where?",
-      "answer": "three"
+      "uuid": 6,
+      "question": "Explain abstraction",
+      "answer": "Abstraction means using simple things to represent complexity. In Java, abstraction means simple things like objects, classes, and variables represent more complex underlying code and data. This is important because it lets us avoid repeating the same work multiple times. It handles complexity by hiding unnecessary details from the user"
     },
     {
-      "uuid": 3,
-      "question": "when?",
-      "answer": "four"
+      "uuid": 7,
+      "question": "Explain polymorphism",
+      "answer": "SAME NAME, MANY FORMS. This Java OOP concept lets programmers use the same word to mean different things in different contexts. One form of polymorphism in Java is method overloading. That’s when different meanings are implied by the code itself. The other form is method overriding. That’s when the different meanings are implied by the values of the supplied variables. TWO TYPES: Runtime , Polymorphism handled during runtime: example (Overriding) Static , Polymorphism handled in the compiler: example (Overloading)"
     },
     {
-      "uuid": 4,
-      "question": "why?",
-      "answer": "five"
+      "uuid": 8,
+      "question": "Explain inheritance",
+      "answer": "This is a special feature of Object Oriented Programming in Java. It lets programmers create new classes that share some of the attributes of existing classes. This lets us build on previous work without reinventing the wheel. * The ability for a sub class to access the super class's members implicitly through the keyword 'extends'; Members include methods as well as variables."
+    },
+    {
+      "uuid": 9,
+      "question": "Explain encapsulation",
+      "answer": "This is the practice of keeping fields within a class private, then providing access to them via public methods. It’s a protective barrier that keeps the data and code safe within the class itself. This way, we can re-use objects like code components or variables without allowing open access to the data system-wide."
+    },
+    {
+      "uuid": 10,
+      "question": "What are the 4 access modifiers and their access specifiers",
+      "answer": "Public: Class, Package, Subclass, Global, Variable Protected: Class, Package, Subclass Default: Class, Package Private: Class, Variable"
+    },
+    {
+      "uuid": 11,
+      "question": "What are the 5 SOLID principles?",
+      "answer": "Single Responsibility, Open/Close Principle, Liskov's Substitution Principle, Interface Segregation Principle, Dependency Inversion"
+    },
+    {
+      "uuid": 12,
+      "question": "Explain 'Single Responsibility'",
+      "answer": "a class should have only a single responsibility (i.e. changes to only one part of the software's specification should be able to affect the specification of the class)."
+    },
+    {
+      "uuid": 13,
+      "question": "Explain 'Open/Close Principle'",
+      "answer": "'open for extension, but closed for modification.' classes' properties can be inherited and used by subclasses etc, but not altered directly"
+    },
+    {
+      "uuid": 14,
+      "question": "Explain 'Liskov's Substitution Principle",
+      "answer": "'objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program.'"
+    },
+    {
+      "uuid": 15,
+      "question": "Explain 'Interface Segregation Principle'",
+      "answer": "'many client-specific interfaces are better than one general-purpose interface.' in other words, when you implement an interface, do you want your class flooded with empty methods you'll never use, or just the few that offer the functionality you are looking for?"
+    },
+    {
+      "uuid": 16,
+      "question": "Explain 'Dependency Inversion'",
+      "answer": "one should 'depend upon abstractions, [not] concretions.' In other words--don't extend ArrayList class to get those functions; implement List interface instead."
+    },
+    {
+      "uuid": 17,
+      "question": "What is the difference between overloading and overriding?",
+      "answer": "Overloading occurs when two or more methods in one class have the same method name but different parameters. Overriding means having two methods with the same method name and parameters (i.e., method signature). One of the methods is in the parent class and the other is in the child class. Overriding changes the BEHAVIOR of the method."
+    },
+    {
+      "uuid": 18,
+      "question": "What is the difference between an abstract class and an interface?",
+      "answer": "An abstract class can contain non abstract methods and default methods, an interface can only contain method signatures. A class can only extend one abstract class, but it can implement multiple interfaces. An abstract class can have any access modifiers on it's methods and fields, an interface can only be public. Interface fields are public static final. Both can let you use classes of the same supertype."
+    },
+    {
+      "uuid": 19,
+      "question": "For Interface and Abstract Class, why would you use one over the other?",
+      "answer": "You can implement multiple interfaces but you can only extend one abstract class. Also, you can flesh out methods more fully in an abstract class; Interfaces are for empty methods."
+    },
+    {
+      "uuid": 20,
+      "question": "What is the differece between 'Collection' and 'Collections'",
+      "answer": "Collections is an utility class present in java.util. package to define several utility method (like sorting,searching ) for collection object. Collections is a class which has some static methods and that method returns the collection. Collection is an interface; root interface in collection hierarchy"
+    },
+    {
+      "uuid": 21,
+      "question": "What is an ArrayStoreException? Is it checked or unchecked?",
+      "answer": "Thrown to indicate that an attempt has been made to store the wrong type of object into an array of objects. It is an unchecked error that occurs at runtime"
+    },
+    {
+      "uuid": 22,
+      "question": "Describe JVM, JDK, and JRE",
+      "answer": "JDK: Java development kit is the tool necessary to compile, document and package Java programs. (like SDK) JRE: A subset of the Java Development Kit (JDK) for end-users and developers who want to redistribute the runtime environment alone. The Java runtime environment consists of the Java virtual machine, the Java core classes, and supporting files. JVM: The java virtual machine is a specification that provides run-time environment in which java byte code can be executed."
+    },
+    {
+      "uuid": 23,
+      "question": "What is a HashMap?",
+      "answer": "HashMap is a Map based collection class that is used for storing Key & value pairs, does not sort the stored keys and Values TALK ABOUT BUCKETS AND COLLISION"
+    },
+    {
+      "uuid": 24,
+      "question": "Why is a HashMap unsorted?",
+      "answer": "Two reasons: One, it IS sorted by Java's own internal logic; entries are sorted by hashcode. It is not sorted in any human-readable way Two, HashMaps are SETS of key-value pairs, and sets are (often) unsorted sets of unique values."
+    },
+    {
+      "uuid": 25,
+      "question": "What is the difference between Comparable and Comparator?",
+      "answer": "Comparable: This interface has one method, compareTo(). Class with objects to be sorted must implement this Comparable interface. Comparator: This interface has two methods, equals() and compare(). Class with objects to be sorted do not need to implement this Comparator interface."
+    },
+    {
+      "uuid": 26,
+      "question": "What is Class Loader?",
+      "answer": "Part of JVM which is used to load classes and interfaces."
+    },
+    {
+      "uuid": 27,
+      "question": "What are the 5 exception keywords? ",
+      "answer": "Try, Catch, Finally, Throw, Throws"
+    },
+    {
+      "uuid": 28,
+      "question": "Difference between throw and throws?",
+      "answer": "'Throws' goes in signature: void method() throws Exception {} 'Throw' goes in method body: void method() { throw new Exception; }"
+    },
+    {
+      "uuid": 29,
+      "question": "Difference between Final, Finally, Finalize?",
+      "answer": "Final: Final is a keyword used to apply restrictions on class, method and variable. Final class can't be inherited, final method can't be overridden and final variable value can't be changed. Finally: Finally is a code block used to place important code, it will be executed whether exception is handled or not. Finalize: Finalize is a method used to perform clean up processing just before object is garbage collected"
+    },
+    {
+      "uuid": 30,
+      "question": "What is Dictionary in Java?",
+      "answer": "The Dictionary class is the abstract parent of any class, such as Hashtable , which maps keys to values. Any non- null object can be used as a key and as a value."
+    },
+    {
+      "uuid": 31,
+      "question": "Which collection is the fastest?",
+      "answer": "In case of index value pair- arraylist, value- hashset and key value pair- hashmap"
+    },
+    {
+      "uuid": 32,
+      "question": "What is an instance variable?",
+      "answer": "An attribute, or field of an object."
+    },
+    {
+      "uuid": 33,
+      "question": "What is the finalize method?",
+      "answer": "The method called before garbage collection on any Java object."
+    },
+    {
+      "uuid": 34,
+      "question": "What is an access modifier?",
+      "answer": "A keyword that describes who or what can access or modifiy the state of an object. Examples: public, private, default, protected"
+    },
+    {
+      "uuid": 35,
+      "question": "What is an abstract class?",
+      "answer": "A class that contains one or more abstract methods, and therefore can never be instantiated. Abstract classes are defined so that other classes can extend them and make them concrete by implementing the abstract methods."
+    },
+    {
+      "uuid": 36,
+      "question": "What is an abstract method?",
+      "answer": "A method that has no implementation. ex interface methods are abstract"
+    },
+    {
+      "uuid": 37,
+      "question": "What is an API?",
+      "answer": "Application Programming Interface. The specification of how a programmer writing an application accesses the behavior and state of classes and objects."
+    },
+    {
+      "uuid": 38,
+      "question": "What is autoboxing?",
+      "answer": "Automatic conversion between reference (Wrapper classes) and primitive types. DONE BY COMPILER"
+    },
+    {
+      "uuid": 39,
+      "question": "what is a class variable?",
+      "answer": "A data item associated with a particular class as a whole--not with particular instances of the class. Class variables are defined in class definitions. Also called a static field"
+    },
+    {
+      "uuid": 40,
+      "question": "What is a class path?",
+      "answer": "An environmental variable which tells the Java virtual machine and Java technologybased applications where to find the class libraries, including user-defined class libraries."
+    },
+    {
+      "uuid": 41,
+      "question": "What does DOM stand for?",
+      "answer": "Document object model."
+    },
+    {
+      "uuid": 42,
+      "question": "What is an enumerated type?",
+      "answer": "A type whose legal values consist of a fixed set of constants. An example of this would be an enum."
+    },
+    {
+      "uuid": 43,
+      "question": "Explaine garbage collection",
+      "answer": "The automatic detection and freeing of memory that is no longer in reference. The Java runtime system performs garbage collection so that programmers never explicitly free objects."
+    },
+    {
+      "uuid": 44,
+      "question": "Explaine what a generic is",
+      "answer": "A class, interface, or method that declares one or more type variables. These type variables are known as type parameters. A generic declaration defines a set of parameterized types, one for each possible invocation of the type parameter section. At runtime, all of these parameterized types share the same class, interface, or method."
+    },
+    {
+      "uuid": 45,
+      "question": "Explain type erasure",
+      "answer": "The deletion of peramatized types at runtime."
+    },
+    {
+      "uuid": 46,
+      "question": "Why use generics?",
+      "answer": "(This answer is blank on the excel sheet.)"
+    },
+    {
+      "uuid": 47,
+      "question": "Explain type erasure?",
+      "answer": "The deletion of peramatized types at runtime."
+    },
+    {
+      "uuid": 48,
+      "question": "Explain JAR (Java Archive)",
+      "answer": "(This answer is blank on the excel sheet.)"
+    },
+    {
+      "uuid": 49,
+      "question": "Why is java considered dynamic?",
+      "answer": "platform-independent file format that aggregates many files into one. Multiple applets written in the Java programming language, and their requisite components can be bundled in a JAR file and subsequently downloaded to a browser in a single HTTP transaction."
+    },
+    {
+      "uuid": 50,
+      "question": "What does it mean to be multithreaded?",
+      "answer": "designed to have parts of its code execute concurrently"
+    },
+    {
+      "uuid": 51,
+      "question": "What does it mean to be protected?",
+      "answer": "signifies that the method or variable can only be accessed by elements residing in its class, subclasses, or classes in the same package."
+    },
+    {
+      "uuid": 52,
+      "question": "What is serialization? ",
+      "answer": "Object created from incoming data (JSON, XML, CSV, whatevs)"
+    },
+    {
+      "uuid": 53,
+      "question": "What is the difference between a queue and a deque?",
+      "answer": "A queue is FIFO (first-in-first-out), a deque has options for FIFO or LIFO (last in first out); it's a queue and a stack in one!"
+    },
+    {
+      "uuid": 54,
+      "question": "What are design patterns?",
+      "answer": "Design patterns are solutions to general problems that software developers faced during software development."
+    },
+    {
+      "uuid": 55,
+      "question": "What are the three basic groups of design patterns?",
+      "answer": "Creational, Structural, Behavior"
+    },
+    {
+      "uuid": 56,
+      "question": "What is a singleton?",
+      "answer": "It's a design pattern, that ensures a class has only one instance, and provides a global point of access to it. It uses a private constructor to limit object"
+    },
+    {
+      "uuid": 57,
+      "question": "What is a decorator pattern?",
+      "answer": "Decorator pattern allows a user to add new functionality to an existing object without altering its structure."
+    },
+    {
+      "uuid": 58,
+      "question": "What is an Observer pattern?",
+      "answer": "Defines a one-to-many dependency between objects so that when one object changes state, all of its dependents are notified and updated automatically."
+    },
+    {
+      "uuid": 59,
+      "question": "What is a Factory pattern?",
+      "answer": "Defines an interface for creating an object, but lets subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses."
+    },
+    {
+      "uuid": 60,
+      "question": "What is a Command pattern?",
+      "answer": "The Command Pattern encapsulates a request as an object, thereby letting you parameterize other objects with different requests, queue or log requests, and support undoable operations."
+    },
+    {
+      "uuid": 61,
+      "question": "What is an Adapter pattern?",
+      "answer": "Converts the interface of a class into another interface the clients expect. Adapter lets classes work together that couldn’t otherwise because of incompatible interfaces."
+    },
+    {
+      "uuid": 62,
+      "question": "What is a Facade pattern?",
+      "answer": "provides a unified interface to a set of interfaces in a subsystem. Facade defines a higher- level interface that makes the subsystem easier to use."
+    },
+    {
+      "uuid": 63,
+      "question": "What is the difference between Adapter and Facade?",
+      "answer": "Adapter links two incompatible interfaces and facade is used when you want an easier or simpler interface to work with."
+    },
+    {
+      "uuid": 64,
+      "question": "What is template Method pattern?",
+      "answer": "Defines the skeleton of an algorithm in a method, deferring some steps to subclasses. Template Method lets subclasses redefine certain steps of an algorithm without changing the algorithm’s structure."
+    },
+    {
+      "uuid": 65,
+      "question": "What is an anonymous inner class?",
+      "answer": "It is an inner class without a name and for which only a single object is created. An anonymous inner class can be useful when making an instance of an object with certain “extras” such as overloading methods of a class or interface, without having to actually subclass a class."
+    },
+    {
+      "uuid": 66,
+      "question": "What is a lambda expression?",
+      "answer": "A function that can be created without belonging to any class."
+    },
+    {
+      "uuid": 67,
+      "question": "What is a method reference? ",
+      "answer": "How java handles passing methods as arguments"
+    },
+    {
+      "uuid": 68,
+      "question": "Explain streams",
+      "answer": "Streams process information in parallel - that is, if a stream is parsing a collection, it will do 'work' to the elements the collection at the same time, unlike a loop which works on one element at a time before working on the next one"
+    },
+    {
+      "uuid": 69,
+      "question": "What is a functional interface?",
+      "answer": "Intefaces that contain only one function that is generally a lambda expression"
+    },
+    {
+      "uuid": 70,
+      "question": "List the functional interfaces and their functional methods. ",
+      "answer": "Function, BiFunction, Consumer, BiConsumer, Runnable, Supplier, Predicate"
+    },
+    {
+      "uuid": 71,
+      "question": "What is the difference between java7 and java8?",
+      "answer": "7 introduced diamond brackets. 8 introduced streams and lambdas"
+    },
+    {
+      "uuid": 72,
+      "question": "What is functional programming ",
+      "answer": "Programming that avoids changing state"
+    },
+    {
+      "uuid": 73,
+      "question": "What are the FIRST principles of TDD?",
+      "answer": "Tests should be: Fast - The code seems to be fast because there is nothing complex about its tests. Independent - The test doesn't depend on other tests. Repeatable - The test will get the same result every time. Self-validating - The test can automatically detect if it's passed. Timely - Both the code and the test code are presented here at the same time."
+    },
+    {
+      "uuid": 74,
+      "question": "What is the difference between composition and inheritance?",
+      "answer": "Composition is instantiating a class as a field ('has a' relationship). Inheritance is inheriting all fields and methods from parent class ('is a' relationship)"
+    },
+    {
+      "uuid": 75,
+      "question": "What is a thread?",
+      "answer": "The path followed when executing a program; all programs have at least 1 thread (known as the main thread)"
+    },
+    {
+      "uuid": 76,
+      "question": "What is an advantage of Java (with its JVM) over other languages that work from the hardware?",
+      "answer": "The JVM can be run on any platform, making it dynamic. C++, for instance, runs on the hardware, so it is not dynamic."
+    },
+    {
+      "uuid": 77,
+      "question": "What does the word static mean?",
+      "answer": "In Java, a static member is a member of a class that isn't associated with an instance of a class. Instead, the member belongs to the class itself. As a result, you can access the static member without first creating a class instance."
     }
   ]
 }

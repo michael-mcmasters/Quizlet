@@ -17,7 +17,7 @@ function Question(props: Props) {
     (function generateAnswers() {
       const answers: string[] = getRandomAnswers(props.allAnswers, props.correctAnswer);
       const correctAnswerIndex: number = getRandomIndex(answers.length);
-      answers[correctAnswerIndex] = props.correctAnswer.toUpperCase();
+      answers[correctAnswerIndex] = props.correctAnswer;
       
       setAnswers(answers);
       setCorrectAnswerIndex(correctAnswerIndex);
