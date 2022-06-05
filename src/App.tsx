@@ -5,6 +5,8 @@ import Sidebar from './components/Sidebar'
 import QuestionsList from './components/QuestionsList'
 import styles from "./styles/App.module.css";
 
+// Color themes from: https://visme.co/blog/website-color-schemes/
+
 function App() {
   return (
     <div className={styles.container}>
