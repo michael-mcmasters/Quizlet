@@ -1,67 +1,56 @@
 {
-  "questions": [
-    {
-      "uuid": 0,
-      "type": "multi",
-      "QuestionGroup": "",
-      "question": "",
-      "answer": ""
-    },
-    {
-      "uuid": 0,
-      "type": "multi",
-      "QuestionGroup": "EC2",
-      "question": "What are some properties of an instance type?",
-      "answer": "vCPUs, Memory, Instance Storage, Network Performance"
-    },
-    {
-      "uuid": 0,
-      "type": "multi",
-      "QuestionGroup": "EC2",
-      "question": "What is a Family Type?",
-      "answer": "Instance Types with simlar settings are grouped into Family Types to help find the right settings for your needs"
-    },
-    {
-      "uuid": 0,
-      "type": "multi",
-      "QuestionGroup": "EC2",
-      "question": "Name the different Family Types",
-      "answer": "Micro Instances, General Purpose, Compute Optimized, GPU Instances, FPGA Instances, Memory Optimized, Storage Optimized"
-    },
-    {
-      "uuid": 0,
-      "type": "multi",
-      "QuestionGroup": "EC2",
-      "question": "What are some Instance Purchasing Options?",
-      "answer": "On-Demand Instances, Reserved Instances, Scheduled Instances, Spot Instances, On-Demand Capacity Reservations"
-    },
-    {
-      "uuid": 0,
-      "type": "multi",
-      "QuestionGroup": "EC2",
-      "question": "What is a security group?",
-      "answer": "An instance level firewall allowing you to restrict Ingress and Egress traffic by specifying what traffic is allowed to communicate with that instance"
-    },
-    {
-      "uuid": 0,
-      "type": "multi",
-      "QuestionGroup": "EC2",
-      "question": "What are some options of a Security Group to restrict inbound and outbound communication to an EC2 instance?",
-      "answer": "Source, Ports, and Protocols"
-    },
-    {
-      "uuid": 0,
-      "type": "boolean",
-      "QuestionGroup": "EC2",
-      "question": "If an EC2 instance is stopped, ephemoral storage is lost",
-      "answer": "True"
-    },
-    {
-      "uuid": 0,
-      "type": "boolean",
-      "QuestionGroup": "EC2",
-      "question": "If an EC2 instance is rebooted, ephemoral storage is lost",
-      "answer": "False"
-    }
-  ]
+  "questions": {
+    "multiQuestions": [
+      {
+        "uuid": "",
+        "questionGroup": "EC2",
+        "question": "What are some properties of an instance type?",
+        "answer": "vCPUs, Memory, Instance Storage, Network Performance"
+      },
+      {
+        "uuid": "",
+        "questionGroup": "EC2",
+        "question": "What is a Family Type?",
+        "answer": "Instance Types with simlar settings are grouped into Family Types to help find the right settings for your needs"
+      },
+      {
+        "uuid": "",
+        "questionGroup": "EC2",
+        "question": "Name the different Family Types",
+        "answer": "Micro Instances, General Purpose, Compute Optimized, GPU Instances, FPGA Instances, Memory Optimized, Storage Optimized"
+      },
+      {
+        "uuid": "",
+        "questionGroup": "EC2",
+        "question": "What are some Instance Purchasing Options?",
+        "answer": "On-Demand Instances, Reserved Instances, Scheduled Instances, Spot Instances, On-Demand Capacity Reservations"
+      },
+      {
+        "uuid": "",
+        "questionGroup": "EC2",
+        "question": "What is a security group?",
+        "answer": "An instance level firewall allowing you to restrict Ingress and Egress traffic by specifying what traffic is allowed to communicate with that instance"
+      },
+      {
+        "uuid": "",
+        "questionGroup": "EC2",
+        "question": "What are some options of a Security Group to restrict inbound and outbound communication to an EC2 instance?",
+        "answer": "Source, Ports, and Protocols"
+      }
+    ],
+    "booleanQuestions": [
+      {
+        "uuid": "",
+        "questionGroup": "EC2",
+        "question": "If an EC2 instance is rebooted, ephemoral storage is lost",
+        "answer": "False"
+      },
+      {
+        "uuid": "",
+        "questionGroup": "EC2",
+        "question": "If an EC2 instance is rebooted, ephemoral storage is lost",
+        "answer": "False"
+      }
+    ]
+  }
 }
