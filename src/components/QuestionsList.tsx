@@ -1,13 +1,12 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import questionsJson from '../resources/aws-questions.json'
-
 import MultiQuestion from './MultiQuestion';
 import BooleanQuestion from './TrueFalseQuestion';
 import styles from "../styles/QuestionList.module.css"
 import { v4 as uuidv4 } from 'uuid';
+import QuestionsJson from '../types/QuestionsJson';
 import MultiQuestionT from '../types/MultiQuestion';
 import BooleanQuestionT from '../types/BooleanQuestion';
-import QuestionsJson from '../types/QuestionsJson';
 
 
 interface Props {
@@ -56,8 +55,8 @@ function QuestionsList(props: Props) {
   );
 }
 
-// TODO: Turn into generic
-function generateKeysIfEmpty(questions: MultiQuestionT[]): MultiQuestionT[] {
+// Using any because it was more readable than using a generic with an array and making sure the uuid property existed on object
+function generateKeysIfEmpty(questions: any[]): any[] {
   return questions.map(q => {
     return {
       ...q,
