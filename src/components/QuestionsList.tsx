@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import questionsJson from '../resources/aws-questions.json'
 import MultiQuestion from './MultiQuestion';
-import BooleanQuestion from './TrueFalseQuestion';
+import BooleanQuestion from './BooleanQuestion';
 import styles from "../styles/QuestionList.module.css"
 import { v4 as uuidv4 } from 'uuid';
 import QuestionsJson from '../types/QuestionsJson';

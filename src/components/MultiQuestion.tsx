@@ -11,6 +11,7 @@ function MultiQuestion(props: Props) {
   
   const [answers, setAnswers] = useState<string[]>([])
   const [correctAnswerIndex, setCorrectAnswerIndex] = useState<number>();
+  const [backgroundColor, setBackgroundColor] = useState('');
   
   
   useEffect(() => {
@@ -28,14 +29,16 @@ function MultiQuestion(props: Props) {
   function handleClickAnswer(clickedIndex: number) {
     if (clickedIndex === correctAnswerIndex) {
       console.log("correct!");
+      setBackgroundColor('green');
     } else {
       console.log("wrong");
+      setBackgroundColor('darkred');
     }
   }
   
   
   return (
-    <div className={styles.container}>
+    <div className={styles.container} style={{backgroundColor: backgroundColor}}>
       <div className={styles.question}>{props.question}</div>
 
       <div className={styles.answerContainer} onClick={() => handleClickAnswer(0)}>
