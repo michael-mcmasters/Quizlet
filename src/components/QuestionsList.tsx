@@ -33,11 +33,10 @@ function QuestionsList(props: Props) {
   
   const answers: string[] = useMemo(() => multiQuestions.map(q => q.answer), [multiQuestions]);
   
+  
   return (
 
     <div className={styles.container}>
-      
-      
       {multiQuestions.map(q => (
         <MultiQuestion
           key={q.uuid}
@@ -46,31 +45,18 @@ function QuestionsList(props: Props) {
           allAnswers={answers}
         />
       ))}
+      {booleanQuestions.map(q => (
+        <BooleanQuestion
+          key={q.uuid}
+          question={q.question}
+          correctAnswer={q.answer}
+        />
+      ))}
     </div>
-    
-    // <div className={styles.container}>
-    //   {questions.map(q => {
-    //     if (q.type === "multi") {
-    //       return <MultiQuestion
-    //         key={q.uuid}
-    //         question={q.question}
-    //         correctAnswer={q.answer}
-    //         allAnswers={answers}
-    //       />
-    //     } else if (q.type === "boolean") {
-    //       return <BooleanQuestion
-    //         key={q.uuid}
-    //         question={q.question}
-    //         correctAnswer={q.answer}
-    //       />
-    //     } else {
-    //       <div>No Question Type specified</div>
-    //     }
-    //   })}
-    // </div>
   );
 }
 
+// TODO: Turn into generic
 function generateKeysIfEmpty(questions: MultiQuestionT[]): MultiQuestionT[] {
   return questions.map(q => {
     return {
