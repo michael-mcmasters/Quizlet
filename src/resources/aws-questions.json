@@ -42,8 +42,8 @@
       {
         "uuid": "",
         "questionGroup": "EC2",
-        "question": "If an EC2 instance is rebooted, ephemoral storage is lost",
-        "answer": "False"
+        "question": "If an EC2 instance is stopped, ephemoral storage is lost",
+        "answer": "True"
       },
       {
         "uuid": "",
