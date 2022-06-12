@@ -1,12 +1,12 @@
 import React from 'react';
-import styles from "../styles/TrueFalseQuestion.module.css"
+import styles from "../styles/BooleanQuestion.module.css"
 
 interface Props {
   question: string;
   correctAnswer: string;
 }
 
-function TrueFalseQuestion(props: Props) {
+function BooleanQuestion(props: Props) {
   
   function handleClickAnswer(clickedIndex: number) {
     if (clickedIndex === 0) {
@@ -33,4 +33,4 @@ function TrueFalseQuestion(props: Props) {
   );
 }
 
-export default TrueFalseQuestion;
+export default BooleanQuestion;

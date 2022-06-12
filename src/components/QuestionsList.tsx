@@ -1,8 +1,8 @@
 import React, { useMemo, useState } from 'react';
 // import questionsJson from '../resources/questions.json'
 import questionsJson from '../resources/aws-questions.json'
-import Question from './Question';
-import TrueFalseQuestion from './TrueFalseQuestion';
+import MultiQuestion from './MultiQuestion';
+import BooleanQuestion from './TrueFalseQuestion';
 import styles from "../styles/QuestionList.module.css"
 import { v4 as uuidv4 } from 'uuid';
 
@@ -25,14 +25,14 @@ function QuestionsList(props: Props) {
     <div className={styles.container}>
       {questions.map(q => {
         if (q.type === "multi") {
-          return <Question
+          return <MultiQuestion
             key={q.uuid}
             question={q.question}
             correctAnswer={q.answer}
             allAnswers={answers}
           />
         } else if (q.type === "boolean") {
-          return <TrueFalseQuestion
+          return <BooleanQuestion
             key={q.uuid}
             question={q.question}
             correctAnswer={q.answer}

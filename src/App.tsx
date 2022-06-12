@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
-import Question from './components/Question'
+import MultiQuestion from './components/MultiQuestion'
 import Sidebar from './components/Sidebar'
 import QuestionsList from './components/QuestionsList'
 import styles from "./styles/App.module.css";

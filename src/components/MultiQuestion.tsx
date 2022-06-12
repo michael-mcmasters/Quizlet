@@ -7,7 +7,7 @@ interface Props {
   allAnswers: string[];
 }
 
-function Question(props: Props) {
+function MultiQuestion(props: Props) {
   
   const [answers, setAnswers] = useState<string[]>([])
   const [correctAnswerIndex, setCorrectAnswerIndex] = useState<number>();
@@ -82,4 +82,4 @@ function getRandomIndex(max: number): number {
 }
 
 
-export default Question;
+export default MultiQuestion;
