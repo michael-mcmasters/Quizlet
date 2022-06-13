@@ -5,37 +5,43 @@
         "uuid": "",
         "tags": ["EC2"],
         "question": "What are some properties of an instance type?",
-        "answer": "vCPUs, Memory, Instance Storage, Network Performance"
+        "answer": "vCPUs, Memory, Instance Storage, Network Performance",
+        "wrongAnswers": ["fakeanswer1", "fakeanswer2"]
       },
       {
         "uuid": "",
         "tags": ["EC2"],
         "question": "What is a Family Type?",
-        "answer": "Instance Types with simlar settings are grouped into Family Types to help find the right settings for your needs"
+        "answer": "Instance Types with simlar settings are grouped into Family Types to help find the right settings for your needs",
+        "wrongAnswers": []
       },
       {
         "uuid": "",
         "tags": ["EC2"],
         "question": "Name the different Family Types",
-        "answer": "Micro Instances, General Purpose, Compute Optimized, GPU Instances, FPGA Instances, Memory Optimized, Storage Optimized"
+        "answer": "Micro Instances, General Purpose, Compute Optimized, GPU Instances, FPGA Instances, Memory Optimized, Storage Optimized",
+        "wrongAnswers": []
       },
       {
         "uuid": "",
         "tags": ["EC2"],
         "question": "What are some Instance Purchasing Options?",
-        "answer": "On-Demand Instances, Reserved Instances, Scheduled Instances, Spot Instances, On-Demand Capacity Reservations"
+        "answer": "On-Demand Instances, Reserved Instances, Scheduled Instances, Spot Instances, On-Demand Capacity Reservations",
+        "wrongAnswers": []
       },
       {
         "uuid": "",
         "tags": ["EC2"],
         "question": "What is a security group?",
-        "answer": "An instance level firewall allowing you to restrict Ingress and Egress traffic by specifying what traffic is allowed to communicate with that instance"
+        "answer": "An instance level firewall allowing you to restrict Ingress and Egress traffic by specifying what traffic is allowed to communicate with that instance",
+        "wrongAnswers": []
       },
       {
         "uuid": "",
         "tags": ["EC2"],
         "question": "What are some options of a Security Group to restrict inbound and outbound communication to an EC2 instance?",
-        "answer": "Source, Ports, and Protocols"
+        "answer": "Source, Ports, and Protocols",
+        "wrongAnswers": []
       }
     ],
     "booleanQuestions": [

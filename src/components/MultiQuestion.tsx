@@ -5,6 +5,7 @@ interface Props {
   question: string;
   correctAnswer: string;
   allAnswers: string[];
+  wrongAnswers: string[];
 }
 
 function MultiQuestion(props: Props) {
@@ -13,18 +14,26 @@ function MultiQuestion(props: Props) {
   const [correctAnswerIndex, setCorrectAnswerIndex] = useState<number>();
   const [backgroundColor, setBackgroundColor] = useState('');
   
-  
+
   useEffect(() => {
     (function generateAnswers() {
       const answers: string[] = getRandomAnswers(props.allAnswers, props.correctAnswer);
-      const correctAnswerIndex: number = getRandomIndex(answers.length);
+
+      const usedIndexes: number[] = [];
+      for (let w of props.wrongAnswers) {
+        const wrongAnswerIndex = getRandomIndexIgnoring(answers.length, usedIndexes);
+        answers[wrongAnswerIndex] = w;
+        usedIndexes.push(wrongAnswerIndex);
+      }
+
+      const correctAnswerIndex: number = getRandomIndexIgnoring(answers.length, usedIndexes);
       answers[correctAnswerIndex] = props.correctAnswer;
-      
+
       setAnswers(answers);
       setCorrectAnswerIndex(correctAnswerIndex);
     })();
   }, [props.allAnswers])
-  
+
   
   function handleClickAnswer(clickedIndex: number) {
     if (clickedIndex === correctAnswerIndex) {
@@ -80,8 +89,17 @@ function getRandomAnswers([...answers]: string[], correctAnswer: string) {
 }
 
 
-function getRandomIndex(max: number): number {
-  return Math.floor(Math.random() * max);
+function getRandomIndex(maxIndex: number): number {
+  return Math.floor(Math.random() * maxIndex);
+}
+
+// Returns a random index that isn't in the ignoreIndexes array
+function getRandomIndexIgnoring(maxIndex: number, ignoreIndexes: number[]): number {
+  let randomIndex = getRandomIndex(maxIndex);
+  while (ignoreIndexes.includes(randomIndex)) {
+    randomIndex = getRandomIndex(maxIndex);
+  }
+  return randomIndex;
 }
 
 

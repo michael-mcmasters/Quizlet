@@ -42,6 +42,7 @@ function QuestionsList(props: Props) {
           question={q.question}
           correctAnswer={q.answer}
           allAnswers={answers}
+          wrongAnswers={q.wrongAnswers}
         />
       ))}
       {booleanQuestions.map(q => (

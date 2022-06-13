@@ -3,4 +3,5 @@ export default interface MultiQuestion {
   tags: string[];
   question: string;
   answer: string;
+  wrongAnswers: string[];
 }
