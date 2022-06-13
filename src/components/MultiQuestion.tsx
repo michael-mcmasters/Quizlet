@@ -24,6 +24,9 @@ function MultiQuestion(props: Props) {
         const wrongAnswerIndex = getRandomIndexIgnoring(answers.length, usedIndexes);
         answers[wrongAnswerIndex] = w;
         usedIndexes.push(wrongAnswerIndex);
+        
+        if (usedIndexes.length >= 3)
+          break;
       }
 
       const correctAnswerIndex: number = getRandomIndexIgnoring(answers.length, usedIndexes);

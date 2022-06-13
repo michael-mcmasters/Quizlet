@@ -6,7 +6,7 @@
         "tags": ["EC2"],
         "question": "What are some properties of an instance type?",
         "answer": "vCPUs, Memory, Instance Storage, Network Performance",
-        "wrongAnswers": ["fakeanswer1", "fakeanswer2"]
+        "wrongAnswers": ["fakeanswer1", "fakeanswer2", "fakeAnswer3", "fakeanswer4"]
       },
       {
         "uuid": "",
