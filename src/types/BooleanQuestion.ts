@@ -1,6 +1,6 @@
 export default interface BooleanQuestion {
   uuid: string;
-  questionGroup: string;
+  tags: string[];
   question: string;
   answer: string;
 }
