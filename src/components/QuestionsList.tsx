@@ -7,6 +7,8 @@ import { v4 as uuidv4 } from 'uuid';
 import QuestionsJson from '../types/QuestionsJson';
 import MultiQuestionT from '../types/MultiQuestion';
 import BooleanQuestionT from '../types/BooleanQuestion';
+import CheckboxQuestionT from '../types/CheckboxQuestion';
+import CheckboxQuestion from './CheckboxQuestion';
 
 
 interface Props {
@@ -17,6 +19,7 @@ function QuestionsList(props: Props) {
   
   const [multiQuestions, setMultiQuestions] = useState<MultiQuestionT[]>([]);
   const [booleanQuestions, setBooleanQuestions] = useState<BooleanQuestionT[]>([]);
+  const [checkboxQuestions, setCheckboxQuestions] = useState<CheckboxQuestionT[]>([]);
   
   
   // Pretend to fetch - Use local json file while waiting for backend to be set up
@@ -26,6 +29,7 @@ function QuestionsList(props: Props) {
       
       setMultiQuestions(generateKeysIfEmpty(questionsResponse.questions.multiQuestions));
       setBooleanQuestions(generateKeysIfEmpty(questionsResponse.questions.booleanQuestions));
+      setCheckboxQuestions(generateKeysIfEmpty(questionsResponse.questions.checkboxQuestions));
     })();
   }, [])
   
@@ -50,6 +54,13 @@ function QuestionsList(props: Props) {
           key={q.uuid}
           question={q.question}
           correctAnswer={q.answer}
+        />
+      ))}
+      {checkboxQuestions.map(q => (
+        <CheckboxQuestion
+          key={q.uuid}
+          question={q.question}
+          answers={q.answers}
         />
       ))}
     </div>

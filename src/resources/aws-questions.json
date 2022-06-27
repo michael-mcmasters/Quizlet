@@ -57,6 +57,27 @@
         "question": "If an EC2 instance is rebooted, ephemoral storage is lost",
         "answer": "False"
       }
+    ],
+    "checkboxQuestions": [
+      {
+        "uuid": "",
+        "tags": ["EC2"],
+        "question": "What are some options to get an AMI (Amazon Machine Image)?",
+        "answers": [
+          "Create your own",
+          "AWS Marketplace",
+          "Community AMIs"
+        ]
+      },
+      {
+        "uuid": "",
+        "tags": ["EC2"],
+        "question": "What are the different GLB types?",
+        "answers": [
+          "ELB",
+          "NLB"
+        ]
+      }
     ]
   }
 }
