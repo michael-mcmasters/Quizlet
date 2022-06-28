@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import styles from "../styles/Question.module.css"
+import styles from "../styles/MultiQuestion.module.css"
 
 interface Props {
   question: string;
@@ -96,7 +96,7 @@ function getRandomIndex(maxIndex: number): number {
   return Math.floor(Math.random() * maxIndex);
 }
 
-// Returns a random index that isn't in the ignoreIndexes array
+// Returns a random number less than maxIndex, and does not return numbers that appear in the ignoreIndexes array
 function getRandomIndexIgnoring(maxIndex: number, ignoreIndexes: number[]): number {
   let randomIndex = getRandomIndex(maxIndex);
   while (ignoreIndexes.includes(randomIndex)) {

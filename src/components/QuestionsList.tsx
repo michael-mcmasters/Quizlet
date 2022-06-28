@@ -60,7 +60,8 @@ function QuestionsList(props: Props) {
         <CheckboxQuestion
           key={q.uuid}
           question={q.question}
-          answers={q.answers}
+          correctAnswers={q.answers}
+          allAnswers={answers}
         />
       ))}
     </div>
