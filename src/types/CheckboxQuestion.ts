@@ -3,4 +3,5 @@ export default interface CheckboxQuestion {
   tags: string[];
   question: string;
   answers: string[];
+  wrongAnswers: string[];
 }

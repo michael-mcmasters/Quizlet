@@ -25,8 +25,10 @@ function MultiQuestion(props: Props) {
         answers[wrongAnswerIndex] = w;
         usedIndexes.push(wrongAnswerIndex);
         
-        if (usedIndexes.length >= 3)
+        if (usedIndexes.length >= 3) {
+          console.warn("There are more than 3 wrong answers provided for this question. Ignoring additional warnings as one slot must have correct answer.")
           break;
+        }
       }
 
       const correctAnswerIndex: number = getRandomIndexIgnoring(answers.length, usedIndexes);

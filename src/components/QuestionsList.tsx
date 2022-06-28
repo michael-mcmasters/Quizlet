@@ -34,7 +34,8 @@ function QuestionsList(props: Props) {
   }, [])
   
   
-  const answers: string[] = useMemo(() => multiQuestions.map(q => q.answer), [multiQuestions]);
+  const allMultiAnswers: string[] = useMemo(() => multiQuestions.map(q => q.answer), [multiQuestions]);
+  const allCheckboxAnswers: string[] = useMemo(() => checkboxQuestions.flatMap(q => q.answers), [multiQuestions]);
   
   
   return (
@@ -45,7 +46,7 @@ function QuestionsList(props: Props) {
           key={q.uuid}
           question={q.question}
           correctAnswer={q.answer}
-          allAnswers={answers}
+          allAnswers={allMultiAnswers}
           wrongAnswers={q.wrongAnswers}
         />
       ))}
@@ -61,7 +62,8 @@ function QuestionsList(props: Props) {
           key={q.uuid}
           question={q.question}
           correctAnswers={q.answers}
-          allAnswers={answers}
+          allAnswers={allCheckboxAnswers}
+          wrongAnswers={q.wrongAnswers}
         />
       ))}
     </div>

@@ -67,6 +67,10 @@
           "Create your own",
           "AWS Marketplace",
           "Community AMIs"
+        ],
+        "wrongAnswers": [
+          "fakeAnswer1",
+          "fakeAnswer2"
         ]
       },
       {
@@ -76,6 +80,39 @@
         "answers": [
           "ELB",
           "NLB"
+        ],
+        "wrongAnswers": [
+          "fakeAnswer1",
+          "fakeAnswer2"
+        ]
+      },
+      {
+        "uuid": "",
+        "tags": ["EC2"],
+        "question": "Test Question",
+        "answers": [
+          "Correct1",
+          "Correct2",
+          "Correct3",
+          "Correct4",
+          "Correct5"
+        ],
+        "wrongAnswers": [
+          "fakeAnswer1",
+          "fakeAnswer2",
+          "fakeAnswer3",
+          "fakeAnswer4",
+          "fakeAnswer5"
+        ]
+      },
+      {
+        "uuid": "",
+        "tags": ["EC2"],
+        "question": "Test Question",
+        "answers": [
+          "RigthAnswer1"
+        ],
+        "wrongAnswers": [
         ]
       }
     ]
