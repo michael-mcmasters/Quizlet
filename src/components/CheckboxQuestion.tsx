@@ -34,23 +34,32 @@ function CheckboxQuestion(props: Props) {
   
   
   function handleClickAnswer(clickedIndex: number) {
-    const clickedIndexesCopy = [ ...clickedIndexes, clickedIndex ];
+    const clickedIndexesCopy = [...clickedIndexes ];
+    if (!clickedIndexes.includes(clickedIndex)) {
+      clickedIndexesCopy.push(clickedIndex);
+    } else {
+      const index = clickedIndexesCopy.indexOf(clickedIndex);
+      clickedIndexesCopy.splice(index, 1)
+    }
     setClickedIndexes(clickedIndexesCopy);
+  }
+  
+
+  function handleSubmit() {
+    if (correctAnswerIndexes.length !== clickedIndexes.length) {
+      setBackgroundColor("red");
+      return;
+    }
     
-    // Verify all answers so far are correct, if not, mark red
-    for (let c of clickedIndexesCopy) {
+    // Verify all answers are correct
+    for (let c of clickedIndexes) {
       if (!correctAnswerIndexes.includes(c)) {
         setBackgroundColor("red");
         return;
       }
     }
     
-    // All answers so far are correct. Check that user has clicked all possible answers
-    if (correctAnswerIndexes.length === clickedIndexesCopy.length) {
-      setBackgroundColor("green");
-    } else {
-      setBackgroundColor("orange");
-    }
+    setBackgroundColor("green");
   }
   
   
@@ -58,14 +67,16 @@ function CheckboxQuestion(props: Props) {
     <>
       <div className={styles.container} style={{backgroundColor: backgroundColor}}>
         {props.question}
-        <div>
-          {answers.map((answer, index) => (
-            <div className={styles.answerContainer} onClick={() => handleClickAnswer(index)}>
-              <div>{alphabet[index]}.</div>
-              <div className={styles.answer}>{answer}</div>
-            </div>
-          ))}
-        </div>
+          {answers.map((answer, index) => {
+            const isClicked = clickedIndexes.includes(index);
+            return (
+              <div className={styles.answerContainer} onClick={() => handleClickAnswer(index)}>
+                <input type="checkbox" checked={isClicked} />
+                <label className={styles.answer}>{answer}</label>
+              </div>
+            );
+          })}
+        <button onClick={handleSubmit}>Submit</button>
       </div>
       <br />
     </>
