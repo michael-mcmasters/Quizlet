@@ -66,6 +66,7 @@
         "uuid": "",
         "question": "If an EC2 instance is stopped, ephemoral storage is lost",
         "answer": "True",
+        "popup": "Popup message",
         "tags": [
           "EC2"
         ]
@@ -74,6 +75,7 @@
         "uuid": "",
         "question": "If an EC2 instance is rebooted, ephemoral storage is lost",
         "answer": "False",
+        "popup": "Popup message",
         "tags": [
           "EC2"
         ]

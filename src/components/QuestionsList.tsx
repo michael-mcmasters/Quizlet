@@ -55,6 +55,7 @@ function QuestionsList(props: Props) {
           key={q.uuid}
           question={q.question}
           correctAnswer={q.answer}
+          popup={q.popup}
         />
       ))}
       {checkboxQuestions.map(q => (

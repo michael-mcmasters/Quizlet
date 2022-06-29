@@ -4,11 +4,13 @@ import styles from "../styles/BooleanQuestion.module.css"
 interface Props {
   question: string;
   correctAnswer: string;
+  popup: string;
 }
 
 function BooleanQuestion(props: Props) {
   
   const [backgroundColor, setBackgroundColor] = useState('');
+  
   
   function handleClickAnswer(clickedAnswer: string) {
     if (clickedAnswer === props.correctAnswer.toLowerCase()) {
@@ -18,6 +20,7 @@ function BooleanQuestion(props: Props) {
     }
   }
 
+  
   return (
     <div className={styles.container} style={{ backgroundColor: backgroundColor }}>
       <div className={styles.question}>{props.question}</div>
@@ -31,6 +34,13 @@ function BooleanQuestion(props: Props) {
       <div className={styles.answerContainer} onClick={() => handleClickAnswer("false")}>
         <span className={styles.answer}>B. False</span>
       </div>
+      
+      {(backgroundColor === "darkred" && props.popup !== '') && (
+        <>
+          <br />
+          {props.popup}
+        </>
+      )}
     </div>
   );
 }

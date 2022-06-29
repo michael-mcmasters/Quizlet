@@ -30,8 +30,8 @@
       },
       {
         "uuid": "",
-        "question": "What protocols are supported by ELB?",
-        "answer": "HTTP, HTTPS, TCP, SSL (which is secure TCP)",
+        "question": "What protocols are supported by ALB?",
+        "answer": "HTTP, HTTPS, FTP, SMTP, and NFS",
         "wrongAnswers": [
           "TCP, TLS, UDP, TCP_UDP"
         ],
@@ -44,10 +44,77 @@
         "question": "What protocols are supported by NLB?",
         "answer": "TCP, TLS, UDP, TCP_UDP",
         "wrongAnswers": [
-          "HTTP, HTTPS, TCP, SSL (which is secure TCP)"
+          "HTTP, HTTPS, FTP, SMTP, and NFS"
         ],
         "tags": [
           "EC2"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "Elastic Load Balancer (ELB) balances traffic to a(n)",
+        "answer": "Target Group",
+        "wrongAnswers": [
+          "AutoScaling Group"
+        ],
+        "tags": [
+          "EC2"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "EC2 Auto Scaling scales instances inside of a(n)",
+        "answer": "AutoScaling Group",
+        "wrongAnswers": [
+          "Target Group"
+        ],
+        "tags": [
+          "EC2"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "When ALB uses HTTPS, what is the type of server certificate used?",
+        "answer": "X.509 certificate",
+        "wrongAnswers": [
+          "X.510 certificate",
+          "X.409 certificate",
+          "X.601 certificate"
+        ],
+        "tags": [
+          "EC2"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "What is Cross-Zone Load Balancing?",
+        "answer": "A setting for ELB. When enabled, ELBs will distribute traffic to targets across AZs evenly",
+        "wrongAnswers": [
+        ],
+        "tags": [
+          "EC2"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "For Lambda, which policy determines what resources the function has access to while running?",
+        "answer": "Role Excecution Policies",
+        "wrongAnswers": [
+          "Function Policy"
+        ],
+        "tags": [
+          "Lambda"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "For Lambda, which policy determines which AWS resources are allowed to invoke your function?",
+        "answer": "Function Policy",
+        "wrongAnswers": [
+          "Role Excecution Policies"
+        ],
+        "tags": [
+          "Lambda"
         ]
       }
     ],
@@ -56,6 +123,7 @@
         "uuid": "",
         "question": "If an EC2 instance is stopped, ephemoral storage is lost",
         "answer": "True",
+        "popup": "",
         "tags": [
           "EC2"
         ]
@@ -64,8 +132,18 @@
         "uuid": "",
         "question": "If an EC2 instance is rebooted, ephemoral storage is lost",
         "answer": "False",
+        "popup": "",
         "tags": [
-          "EC2"
+          "Lambda"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "By default, AWS Lambda encrypts your environment variables *after* the function has been deployed",
+        "answer": "True",
+        "popup": "",
+        "tags": [
+          "Lambda"
         ]
       }
     ],
@@ -87,7 +165,7 @@
         "uuid": "",
         "question": "What are the different GLB types?",
         "answers": [
-          "ELB",
+          "ALB",
           "NLB",
           "Classic Load Balancer"
         ],
