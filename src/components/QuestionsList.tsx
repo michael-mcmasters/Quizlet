@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import questionsJson from '../resources/aws-questions.json'
+import questionsJson from '../resources/aws-questions-real.json'
 import MultiQuestion from './MultiQuestion';
 import BooleanQuestion from './BooleanQuestion';
 import styles from "../styles/QuestionList.module.css"

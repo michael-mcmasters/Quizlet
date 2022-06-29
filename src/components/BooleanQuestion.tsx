@@ -12,10 +12,8 @@ function BooleanQuestion(props: Props) {
   
   function handleClickAnswer(clickedAnswer: string) {
     if (clickedAnswer === props.correctAnswer.toLowerCase()) {
-      console.log("correct!");
       setBackgroundColor('green');
     } else {
-      console.log("wrong");
       setBackgroundColor('darkred');
     }
   }
@@ -23,15 +21,15 @@ function BooleanQuestion(props: Props) {
   return (
     <div className={styles.container} style={{ backgroundColor: backgroundColor }}>
       <div className={styles.question}>{props.question}</div>
-
+      
+      <br />
       <div className={styles.answerContainer} onClick={() => handleClickAnswer("true")}>
-        <div>A.</div>
-        <div className={styles.answer}>True</div>
+        <span className={styles.answer}>A. True</span>
       </div>
 
+      <br />
       <div className={styles.answerContainer} onClick={() => handleClickAnswer("false")}>
-        <div>B.</div>
-        <div className={styles.answer}>False</div>
+        <span className={styles.answer}>B. False</span>
       </div>
     </div>
   );
