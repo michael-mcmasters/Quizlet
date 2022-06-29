@@ -89,8 +89,7 @@
         "uuid": "",
         "question": "What is Cross-Zone Load Balancing?",
         "answer": "A setting for ELB. When enabled, ELBs will distribute traffic to targets across AZs evenly",
-        "wrongAnswers": [
-        ],
+        "wrongAnswers": [],
         "tags": [
           "EC2"
         ]
@@ -116,6 +115,119 @@
         "tags": [
           "Lambda"
         ]
+      },
+      {
+        "uuid": "",
+        "question": "What is needed for your Lambda to communicate with AWS services within your VPC?",
+        "answer": "You need to toggle a setting in Lambda. And then give the Lambda additional execution roles (ec2:CreateNetworkInterface, ec2:DescribeNetworkInterfaces, ec2:DeleteNetworkInterface) so that it can give resources in your VPC, ENIs (Elastic Network Interfaces), and the lambda will need to be attached to a private subnet, with an optional NAT Gateway to access public internet",
+        "wrongAnswers": [],
+        "tags": [
+          "Lambda"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "What is Unreserved Concurrency?",
+        "answer": "How many functions can be ran at the same time within a single region. By default it is 1,000",
+        "wrongAnswers": [],
+        "tags": [
+          "Lambda"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "What is Reserved Concurrency?",
+        "answer": "You can reserve, say, 50 functions, and now the Unreserved pool of functions is only 950",
+        "wrongAnswers": [
+          "How many functions can be ran at the same time within a single region. By default it is 1,000"
+        ],
+        "tags": [
+          "Lambda"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "What happens when you Throttle a Lambda?",
+        "answer": "Sets Reserved Concurrency of that function to 0. Meaning nothing can call it until you increase its Reserved Concurrency again to something greater than 0",
+        "wrongAnswers": [],
+        "tags": [
+          "Lambda"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "What is an Event Source?",
+        "answer": "The AWS Service that produces the event and triggers your Lambda",
+        "wrongAnswers": [],
+        "tags": [
+          "Lambda"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "How do you get an instance to run terminal commands during its first boot cycle?",
+        "answer": "Add the command to User Data",
+        "wrongAnswers": [],
+        "tags": [
+          "EC2"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "What is an Invocation Type?",
+        "answer": "If the Lambda event is synchrounous or asynchrounous",
+        "wrongAnswers": [],
+        "tags": [
+          "Lambda"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "A Reserved Instance can only be reserved for what timeframe?",
+        "answer": "1 or 3 years",
+        "wrongAnswers": [
+          "1 or 4 years",
+          "1 or 2 years",
+          "3 or 5 years"
+        ],
+        "tags": [
+          "EC2"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "What is the difference between a Reserved Instance and a Scheduled Instance?",
+        "answer": "A Reserved Instance is used for a specific length of time, whereas a Scheduled Instance boots up at a specific time and then shuts back down",
+        "wrongAnswers": [
+          "A Reserved Instance boots up at a specific time and then shuts back down, whereas a Scheduled Instance is used for a specific length of time",
+          "They are the same, but a Scheduled Instance is cheaper"
+        ],
+        "tags": [
+          "EC2"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "What does the ELB do to an EC2 instance when it fails a health check?",
+        "answer": "Removes it from the Target Group and stops sending it traffic",
+        "wrongAnswers": [
+          "Destroys it and creates a new EC2 instance",
+          "Removes it from the AutoScaling group"
+        ],
+        "tags": [
+          "EC2"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "What does the EC2 AutoScaler do to an EC2 instance when it fails a health check?",
+        "answer": "Destroys it and creates a new EC2 instance",
+        "wrongAnswers": [
+          "Removes it from the Target Group"
+        ],
+        "tags": [
+          "EC2"
+        ]
       }
     ],
     "booleanQuestions": [
@@ -134,7 +246,16 @@
         "answer": "False",
         "popup": "",
         "tags": [
-          "Lambda"
+          "EC2"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "For a Reserved Instance, it is cheaper to pay Partial Upfront than All Upfront",
+        "answer": "False",
+        "popup": "It is better to pay All Upfront, sometimes up to 75% off! It is most expensive to pay nothing before use. Partial Upfront is in the middle pricing wise",
+        "tags": [
+          "EC2"
         ]
       },
       {
@@ -145,9 +266,104 @@
         "tags": [
           "Lambda"
         ]
+      },
+      {
+        "uuid": "",
+        "question": "By default, Lambda can access services in your VPC",
+        "answer": "False",
+        "popup": "By default, Lambda can only access resources via the internet (such as S3)",
+        "tags": [
+          "Lambda"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "When Lambda fails to handle a Synchronous Event, it will automatically retry the event 2 more times",
+        "answer": "False",
+        "popup": "The source sending the Synchronous Event is responsible for retrying. Lambda will only retry *Asynchronous Events* 2 more times",
+        "tags": [
+          "Lambda"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "For Lambda, poll based events are always synchrounous",
+        "answer": "True",
+        "popup": "",
+        "tags": [
+          "Lambda"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "Lambda is Serverless, event driven, and is cost affective",
+        "answer": "True",
+        "popup": "",
+        "tags": [
+          "Lambda"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "Key Pairs are used for connecting to EC2 instances, IAM, and other AWS resources",
+        "answer": "False",
+        "popup": "Key Pairs are only used for connecting to EC2 instances",
+        "tags": [
+          "EC2"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "When referencing ELB, you should use its static host name (url). Not its underlying IP Address",
+        "answer": "True",
+        "popup": "",
+        "tags": [
+          "EC2"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "An EBS volume is an example of ephemoral storage for an EC2 instance",
+        "answer": "False",
+        "popup": "An EBS volume is an example of persistent storage",
+        "tags": [
+          "EC2"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "An EBS volume will maintain its data when disconnected from an EC2 instance",
+        "answer": "True",
+        "popup": "",
+        "tags": [
+          "EC2"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "By default, data in an EBS Volume is backed up automatically to another EBS Volume within the same AZ",
+        "answer": "True",
+        "popup": "",
+        "tags": [
+          "EC2"
+        ]
       }
     ],
     "checkboxQuestions": [
+      {
+        "uuid": "",
+        "question": "An Instance Type consists of what paremeters?",
+        "answers": [
+          "vCPUs",
+          "Memory",
+          "Instance Storage",
+          "Network Performance"
+        ],
+        "wrongAnswers": [],
+        "tags": [
+          "EC2"
+        ]
+      },
       {
         "uuid": "",
         "question": "What are some options to get an AMI (Amazon Machine Image)?",
@@ -193,7 +409,7 @@
       },
       {
         "uuid": "",
-        "question": "Which of these are some Instance Purchasing Options?",
+        "question": "Which of these are some Instance Purchasing Options for EC2?",
         "answers": [
           "On-Demand Instances",
           "Reserved Instances",
@@ -204,6 +420,36 @@
         "wrongAnswers": [],
         "tags": [
           "EC2"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "What is needed for your Lambda to communicate with AWS services within your VPC?",
+        "answers": [
+          "A setting in Lambda needs to be enabled",
+          "Additional execution roles (ec2:CreateNetworkInterface, ec2:DescribeNetworkInterfaces, ec2:DeleteNetworkInterface) so that Lambda can give AWS resources in your VPC ENIs (Elastic Network Interfaces)",
+          "Needs to be placed on a Private Subnet within the VPC (and given a NAT Gateway if it wants to speak to the public internet)"
+        ],
+        "wrongAnswers": [
+          "Needs to be placed on a Public Subnet within the VPC (and given a NAT Gateway if it wants to speak to the public internet)",
+          "Additional Function roles (ec2:CreateNetworkInterface, ec2:DescribeNetworkInterfaces, ec2:DeleteNetworkInterface) so that Lambda can give AWS resources in your VPC ENIs (Elastic Network Interfaces)"
+        ],
+        "tags": [
+          "Lambda"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "What are the different Tenacity options?",
+        "answers": [
+          "Shared Tenancy",
+          "Dedicated Instances",
+          "Dedicated Hosts / Dedicated Host Instances"
+        ],
+        "wrongAnswers": [
+        ],
+        "tags": [
+          "Lambda"
         ]
       }
     ]
