@@ -228,6 +228,19 @@
         "tags": [
           "EC2"
         ]
+      },
+      {
+        "uuid": "",
+        "question": "Which type of Elastic Load Balancer support is ideal for receiving inbound traffic from the clients outside the VPC, offers TLS termination, and advanced routing?",
+        "answer": "ALB",
+        "wrongAnswers": [
+          "NLB",
+          "Classic Load Balancer",
+          "ELB"
+        ],
+        "tags": [
+          "EC2"
+        ]
       }
     ],
     "booleanQuestions": [

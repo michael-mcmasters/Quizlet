@@ -1,0 +1,273 @@
+{
+  "questions": {
+    "multiQuestions": [
+      {
+        "uuid": "",
+        "question": "Which storage option provides very low latency for data access?",
+        "answer": "Block Storage",
+        "wrongAnswers": [
+          "File Storage",
+          "Object Storage"
+        ],
+        "tags": [
+          "Storage"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "Which storage option shares access for multiple users and is comparable to NAS storage (on prem)?",
+        "answer": "File Storage",
+        "wrongAnswers": [
+          "Block Storage",
+          "Object Storage"
+        ],
+        "tags": [
+          "Storage"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "What storage option has items stored by a flat address space and referenced by a unique key",
+        "answer": "Object Storage",
+        "wrongAnswers": [
+          "Block Storage",
+          "File Storage"
+        ],
+        "tags": [
+          "Storage"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "What is the largest size an individual S3 file can be?",
+        "answer": "5 terabytes",
+        "wrongAnswers": [
+        ],
+        "tags": [
+          "S3"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "Which Storage Tier is good for when the access to the object will be unkown?",
+        "answer": "S3 INT",
+        "wrongAnswers": [
+        ],
+        "tags": [
+          "S3",
+          "S3 S-IA",
+          "S3 Z-IA"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "Which Storage Tier always puts and keeps objects in the Infrequent Access Tier?",
+        "answer": "S3 S-IA",
+        "wrongAnswers": [
+          "S3",
+          "S3 G-DA",
+          "S3 Z-IA"
+        ],
+        "tags": [
+          "S3"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "Which Storage Tier has infrequent access and only duplicates objects across one AZ rather than across multiple AZs like the other Storage Tiers?",
+        "answer": "S3 Z-IA",
+        "wrongAnswers": [
+          "S3",
+          "S3 G-DA",
+          "S3 Glacier"
+        ],
+        "tags": [
+          "S3"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "How long does it take for S3 INT Tier to move Frequent Access Tier to the Infrequent Access Tier?",
+        "answer": "30 days",
+        "wrongAnswers": [
+          "60 days",
+          "10 days",
+          "15 days"
+        ],
+        "tags": [
+          "S3"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "What are the 3 retrieval options of S3 Glacier, from cheapest to most expensive?",
+        "answer": "Bulk, Standard, Expedited",
+        "wrongAnswers": [
+          "Bulk, Expedited, Standard",
+          "Expedited, Bulk, Standard",
+          "Standard, Bulk, Expedited"
+        ],
+        "tags": [
+          "S3"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "How long can it take to retrieve an item from S3 Glacier using the Expedited retreival option",
+        "answer": "Within 5 minutes",
+        "wrongAnswers": [
+          "3 - 5 hours",
+          "5 - 12 hours"
+        ],
+        "tags": [
+          "S3"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "What does S3 INT stand for?",
+        "answer": "Intelligent Tiering",
+        "wrongAnswers": [
+          "Glacier Deep Archive",
+          "One Zone - Infrequent Access",
+          "Standard Infrequent Access"
+        ],
+        "tags": [
+          "S3"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "What does S3 S-IA stand for?",
+        "answer": "Standard Infrequent Access",
+        "wrongAnswers": [
+          "Glacier Deep Archive",
+          "Intelligent Tiering",
+          "One Zone - Infrequent Access"
+        ],
+        "tags": [
+          "S3"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "What does S3 Z-IA stand for?",
+        "answer": "One Zone - Infrequent Access",
+        "wrongAnswers": [
+          "Glacier Deep Archive",
+          "Intelligent Tiering",
+          "Standard Infrequent Access"
+        ],
+        "tags": [
+          "S3"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "What does S3 G-DA stand for?",
+        "answer": "Glacier Deep Archive",
+        "wrongAnswers": [
+          "Intelligent Tiering",
+          "One Zone - Infrequent Access",
+          "Standard Infrequent Access"
+        ],
+        "tags": [
+          "S3"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "For S3 Glacier, buckets are called ___ and objects are called ___",
+        "answer": "vaults, archives",
+        "wrongAnswers": [
+          "archives, vaults",
+          "objects, buckets",
+          "packs, files"
+        ],
+        "tags": [
+          "S3"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "What do Lifecycle Rules do?",
+        "answer": "Provide an automatic method of managing the life of your data while it is being stored on S3. Such as moving to another S3 bucket, or deleting the object entirely after a period of time. (For cost saving)",
+        "wrongAnswers": [
+        ],
+        "tags": [
+          "S3"
+        ]
+      }
+    ],
+    "booleanQuestions": [
+      {
+        "uuid": "",
+        "question": "S3 has an object hierarchy",
+        "answer": "False",
+        "popup": "You can create folders for organization, but objects are retrieved by a unique key and do not depend on folders or hierarchies",
+        "tags": [
+          "S3"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "S3 is highly available, durable, cost effective, widely accessible",
+        "answer": "True",
+        "popup": "",
+        "tags": [
+          "S3"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "By default, S3 data isn't duplicated to multiple AZs in your region",
+        "answer": "False",
+        "popup": "Data is duplicated across multiple AZs in your region to increase durability and availabiily (depending on your Storage Class)",
+        "tags": [
+          "S3"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "S3 buckets can have any name",
+        "answer": "False",
+        "popup": "S3 buckets must have globally unique names",
+        "tags": [
+          "S3"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "S3 Versioning is disabled by default",
+        "answer": "True",
+        "popup": "",
+        "tags": [
+          "S3"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "Once S3 Versioning is enabled, it can't be disabled",
+        "answer": "True",
+        "popup": "It can only be suspended. All previous versions will still exist",
+        "tags": [
+          "S3"
+        ]
+      }
+    ],
+    "checkboxQuestions": [
+      {
+        "uuid": "",
+        "question": "",
+        "answers": [
+          ""
+        ],
+        "wrongAnswers": [
+        ],
+        "tags": [
+          "Storage"
+        ]
+      }
+    ]
+  }
+}
