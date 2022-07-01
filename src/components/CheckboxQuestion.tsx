@@ -51,7 +51,7 @@ function CheckboxQuestion(props: Props) {
 
   
   function handleClickAnswer(clickedIndex: number) {
-    const clickedIndexesCopy = [...clickedIndexes ];
+    const clickedIndexesCopy = [ ...clickedIndexes ];
     if (!clickedIndexes.includes(clickedIndex)) {
       clickedIndexesCopy.push(clickedIndex);
     } else {
@@ -95,6 +95,11 @@ function CheckboxQuestion(props: Props) {
           })}
         <br />
         <button onClick={handleSubmit}>Submit</button>
+        <br />
+        <br />
+        {backgroundColor !== '' && answers.map(a => (
+          <div>{a}</div>
+        ))}
       </div>
     </>
   );

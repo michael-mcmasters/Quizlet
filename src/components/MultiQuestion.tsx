@@ -11,7 +11,7 @@ interface Props {
 function MultiQuestion(props: Props) {
   
   const [answers, setAnswers] = useState<string[]>([])
-  const [correctAnswerIndex, setCorrectAnswerIndex] = useState<number>();
+  const [correctAnswerIndex, setCorrectAnswerIndex] = useState<number>(-1);
   const [backgroundColor, setBackgroundColor] = useState('');
   
 
@@ -74,6 +74,9 @@ function MultiQuestion(props: Props) {
         <div>D.</div>
         <div className={styles.answer}>{answers[3]}</div>
       </div>
+      
+      <br />
+      {backgroundColor !== '' && correctAnswerIndex > 0 && answers[correctAnswerIndex]}
     </div>
   );
 }
