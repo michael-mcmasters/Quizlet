@@ -35,7 +35,7 @@ function BooleanQuestion(props: Props) {
         <span className={styles.answer}>B. False</span>
       </div>
       
-      {(backgroundColor === "darkred" && props.popup !== '') && (
+      {(backgroundColor !== "" && props.popup !== '') && (
         <>
           <br />
           {props.popup}

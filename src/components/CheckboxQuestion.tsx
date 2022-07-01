@@ -96,7 +96,6 @@ function CheckboxQuestion(props: Props) {
         <br />
         <button onClick={handleSubmit}>Submit</button>
       </div>
-      <br />
     </>
   );
 }

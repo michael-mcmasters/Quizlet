@@ -246,7 +246,7 @@
     "booleanQuestions": [
       {
         "uuid": "",
-        "question": "If an EC2 instance is stopped, ephemoral storage is lost",
+        "question": "If an EC2 instance is stopped or terminated, ephemoral storage is lost",
         "answer": "True",
         "popup": "",
         "tags": [

@@ -3,18 +3,6 @@
     "multiQuestions": [
       {
         "uuid": "",
-        "question": "Which storage option provides very low latency for data access?",
-        "answer": "Block Storage",
-        "wrongAnswers": [
-          "File Storage",
-          "Object Storage"
-        ],
-        "tags": [
-          "Storage"
-        ]
-      },
-      {
-        "uuid": "",
         "question": "Which storage option shares access for multiple users and is comparable to NAS storage (on prem)?",
         "answer": "File Storage",
         "wrongAnswers": [
@@ -197,6 +185,125 @@
         "tags": [
           "S3"
         ]
+      },
+      {
+        "uuid": "",
+        "question": "What is Server-Access Logging?",
+        "answer": "When enabled, captures and logs requests made to the bucket & its objects and sends them to a Target Bucket as a Log Delivery Group",
+        "wrongAnswers": [
+        ],
+        "tags": [
+          "S3"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "What is Object-Level Logging?",
+        "answer": "When enabled, uses API CloudTrail to track API requests made to objects (PutObject, DeleteObject, etc). Stores it into a Log File which is then stored in S3",
+        "wrongAnswers": [
+        ],
+        "tags": [
+          "S3"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "What is Transfer Acceleration?",
+        "answer": "An S3 setting that when enabled, has requests go to Edge Locations (using CloudFront) to quickly access S3. There is a cost per gigabyte of this featuer whereas regular S3 requests are free",
+        "wrongAnswers": [
+        ],
+        "tags": [
+          "S3"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "What does CORS (Cross Origin Resource Sharing) do?",
+        "answer": "Allows resources on a web page to be requested from a different domain than its own",
+        "wrongAnswers": [
+        ],
+        "tags": [
+          "S3"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "How do you enable CORS for an S3 Bucket?",
+        "answer": "Enable it in the Bucket Policy JSON under the AllowedHeaders property (\"*\")",
+        "wrongAnswers": [
+        ],
+        "tags": [
+          "S3"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "Which storage service is best used for uploading a file once, and then reading it many many times?",
+        "answer": "S3",
+        "wrongAnswers": [
+          "Elastic Block Store",
+          "Elastic File System (EFS)",
+          "S3 Glacier"
+        ],
+        "tags": [
+          "S3"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "Which storage service stores and updates data as chunks, and is great for low latency, fast, and persistent storage?",
+        "answer": "Elastic Block Store",
+        "wrongAnswers": [
+          "S3",
+          "Amazon Elastic File System (EFS)",
+          "S3 Glacier"
+        ],
+        "tags": [
+          "S3"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "How many storage classes does EFS have?",
+        "answer": "2",
+        "wrongAnswers": [
+          "1",
+          "3",
+          "5"
+        ],
+        "tags": [
+          "EFS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "For EFS, you can move files automatically between Standard and Infrequent Access storage classes by using",
+        "answer": "Lifecycle Management",
+        "wrongAnswers": [
+        ],
+        "tags": [
+          "EFS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "What does Max I/O performance mode for EFS do?",
+        "answer": "Gives you virutally unlimited throughput to your files, but with higher latency, and is more expensive",
+        "wrongAnswers": [
+        ],
+        "tags": [
+          "EFS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "What does Provisioned Throughput for EFS do?",
+        "answer": "Your file system provisions enough to handle larger burst amounts",
+        "wrongAnswers": [
+        ],
+        "tags": [
+          "EFS"
+        ]
       }
     ],
     "booleanQuestions": [
@@ -253,19 +360,110 @@
         "tags": [
           "S3"
         ]
+      },
+      {
+        "uuid": "",
+        "question": "Server-Access Logging is garaunteed to work for every request to your S3 bucket",
+        "answer": "False",
+        "popup": "Not garaunteed, is on a best effort basis",
+        "tags": [
+          "S3"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "If 'block all public access' is checked in an S3 bucket, but ACL says to allow public access, public access is allowed through",
+        "answer": "False",
+        "popup": "'block all public access' overrides ACL (and I assume Bucket Policies and IAM)",
+        "tags": [
+          "S3"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "For EFS, the Infrequent Access storage class is cheaper than the Standard storage class",
+        "answer": "True",
+        "popup": "Infrequent Access is cheaper than Standard, but unlike Standard, it does charge you per every read & write",
+        "tags": [
+          "EFS"
+        ]
       }
     ],
     "checkboxQuestions": [
       {
         "uuid": "",
-        "question": "",
+        "question": "What are the 3 main ways to control access to an S3 bucket?",
         "answers": [
-          ""
+          "IAM policies",
+          "Bucket Policies",
+          "Access Control Lists (ACLs)"
         ],
         "wrongAnswers": [
         ],
         "tags": [
-          "Storage"
+          "S3"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "EFS ...",
+        "answers": [
+          "is a fully managed, highly available and durable service",
+          "can easily scale to petabytes in size with low latency access",
+          "can maintain a high level of throughput (MB/s)",
+          "is replicated to multiple AZs"
+        ],
+        "wrongAnswers": [
+          "is replicated to multiple AZs in multiple regions",
+          "can only be used for one EC2 instance"
+        ],
+        "tags": [
+          "EFS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "Which of these are EFS storage classes?",
+        "answers": [
+          "Standard",
+          "Infrequent Access"
+        ],
+        "wrongAnswers": [
+          "Z-IA",
+          "G-DA"
+        ],
+        "tags": [
+          "EFS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "What are the EFS Performance Modes?",
+        "answers": [
+          "General Purpose",
+          "Max I/O"
+        ],
+        "wrongAnswers": [
+          "Bursting",
+          "Provisioned"
+        ],
+        "tags": [
+          "EFS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "What are the EFS Throughput Modes?",
+        "answers": [
+          "Bursting",
+          "Provisioned"
+        ],
+        "wrongAnswers": [
+          "General Purpose",
+          "Max I/O"
+        ],
+        "tags": [
+          "EFS"
         ]
       }
     ]
