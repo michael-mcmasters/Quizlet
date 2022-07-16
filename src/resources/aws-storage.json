@@ -40,11 +40,12 @@
         "question": "Which Storage Tier is good for when the access to the object will be unkown?",
         "answer": "S3 INT",
         "wrongAnswers": [
-        ],
-        "tags": [
           "S3",
           "S3 S-IA",
           "S3 Z-IA"
+        ],
+        "tags": [
+          "S3"
         ]
       },
       {
@@ -209,7 +210,7 @@
       {
         "uuid": "",
         "question": "What is Transfer Acceleration?",
-        "answer": "An S3 setting that when enabled, has requests go to Edge Locations (using CloudFront) to quickly access S3. There is a cost per gigabyte of this featuer whereas regular S3 requests are free",
+        "answer": "Using CloudFront to create a CDN (Content Delivery Network) to enable requests to go through Edge Locations to quickly access S3 (and other services). There is a cost per gigabyte of this featuer whereas regular S3 requests are free",
         "wrongAnswers": [
         ],
         "tags": [
@@ -287,9 +288,38 @@
       },
       {
         "uuid": "",
-        "question": "What does Max I/O performance mode for EFS do?",
-        "answer": "Gives you virutally unlimited throughput to your files, but with higher latency, and is more expensive",
+        "question": "What does the General Purpose performance mode for EFS do?",
+        "answer": "Provides you with throughput to your files of up to 35,000 operations per second, with lower latency and being cheaper than with Max I/O",
         "wrongAnswers": [
+          "Allows you to provision for the expected throughput, no matter the file system's size, but is more expensive",
+          "Provisions throughput for read/write operations based off of your file system's size. Allows you to 'burst' above your baseline with Burst Credits, but you will be throttled when out of credits",
+          "Gives you virtually unlimited throughput to your files, but with higher latency, and is more expensive"
+        ],
+        "tags": [
+          "EFS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "What does Max I/O performance mode for EFS do?",
+        "answer": "Gives you virtually unlimited throughput to your files, but with higher latency, and is more expensive",
+        "wrongAnswers": [
+          "Allows you to provision for the expected throughput, no matter the file system's size, but is more expensive",
+          "Provisions throughput for read/write operations based off of your file system's size. Allows you to 'burst' above your baseline with Burst Credits, but you will be throttled when out of credits",
+          "Provides you with throughput to your files of up to 35,000 operations per second, with lower latency and being cheaper than with Max I/O"
+        ],
+        "tags": [
+          "EFS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "What does Bursting Throughput for EFS do?",
+        "answer": "Provisions throughput for read/write operations based off of your file system's size. Allows you to 'burst' above your baseline with Burst Credits, but you will be throttled when out of credits",
+        "wrongAnswers": [
+          "Allows you to provision for the expected throughput, no matter the file system's size, but is more expensive",
+          "Gives you virtually unlimited throughput to your files, but with higher latency, and is more expensive",
+          "Provides you with throughput to your files of up to 35,000 operations per second, with lower latency and being cheaper than with Max I/O"
         ],
         "tags": [
           "EFS"
@@ -298,11 +328,407 @@
       {
         "uuid": "",
         "question": "What does Provisioned Throughput for EFS do?",
-        "answer": "Your file system provisions enough to handle larger burst amounts",
+        "answer": "Allows you to provision for the expected throughput, no matter the file system's size, but is more expensive",
+        "wrongAnswers": [
+          "Provisions throughput for read/write operations based off of your file system's size. Allows you to 'burst' above your baseline with Burst Credits, but you will be throttled when out of credits",
+          "Gives you virtually unlimited throughput to your files, but with higher latency, and is more expensive",
+          "Provides you with throughput to your files of up to 35,000 operations per second, with lower latency and being cheaper than with Max I/O"
+        ],
+        "tags": [
+          "EFS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "Which is the best Throughput Mode if you have a small data size but need a very large amount of reads/writes",
+        "answer": "Provisioned Throughput",
+        "wrongAnswers": [
+          "Bursting Throughput",
+          "General Purpose",
+          "Max I/O"
+        ],
+        "tags": [
+          "EFS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "What are Burst Credits",
+        "answer": "Credits that are a part of Burst Throughput mode that accrue automatically and decrease as you go above the expected base throughput. Once you run out, throughput will be throttled",
         "wrongAnswers": [
         ],
         "tags": [
           "EFS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "What is Encryption in Transit?",
+        "answer": "A way to encrypt data from EFS all the way to the end client, using TLS (Transport Layer Security)",
+        "wrongAnswers": [
+        ],
+        "tags": [
+          "EFS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "How do you enable Encryption in Transit?",
+        "answer": "When SSHd into the EC2 instance to connect it to the Mount Point, enter a terminal command to set TLS up using Stunnel",
+        "wrongAnswers": [
+        ],
+        "tags": [
+          "EFS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "How can you migrate an NFS file system from on-prem to EFS?",
+        "answer": "AWS DataSync",
+        "wrongAnswers": [
+          "AWS Storage Gateway"
+        ],
+        "tags": [
+          "EFS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "AWS has an easy GitHub repo to get started with DataSync called",
+        "answer": "In-Cloud QuickStart and Scheduler",
+        "wrongAnswers": [
+        ],
+        "tags": [
+          "EFS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "Which storage option is perfect for caching data or buffering rapidly changing data that doesn't need to be kept?",
+        "answer": "Instance Storage",
+        "wrongAnswers": [
+          "EBS",
+          "EFS",
+          "S3"
+        ],
+        "tags": [
+          "Instance Storage"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "Snapshots of EBS volumes can be manually created. But to create them automatically you can use",
+        "answer": "Amazon CloudWatch",
+        "wrongAnswers": [
+        ],
+        "tags": [
+          "EBS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "Where do snapshots of EBS volumes go?",
+        "answer": "To an S3 bucket",
+        "wrongAnswers": [
+        ],
+        "tags": [
+          "EBS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "How do you encrypt an EBS volume?",
+        "answer": "Just enable it for the volume in the AWS Console",
+        "wrongAnswers": [
+        ],
+        "tags": [
+          "EBS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "What AWS service and algorithm does AWS use when encrypting an EBS volume?",
+        "answer": "KMS and AES-256",
+        "wrongAnswers": [
+          "KMS and SHA-256"
+        ],
+        "tags": [
+          "EBS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "Which EBS Volume Type lets you set the IOPS rate you expect and gives consistent results",
+        "answer": "Provisioned IOPS (SSD)",
+        "wrongAnswers": [
+          "Throughput Optimized (HDD) (st1)",
+          "Cold HDD (sc1)"
+        ],
+        "tags": [
+          "EBS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "Which EBS Volume Type is good for frequently accessed data and large data sets and cannot be used as boot volumes for your instances",
+        "answer": "Throughput Optimized (HDD) (st1)",
+        "wrongAnswers": [
+          "Provisioned IOPS (SSD)",
+          "Cold HDD (sc1)"
+        ],
+        "tags": [
+          "EBS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "Which EBS Volume Type has the  lowest cost and is good for infrequent access and large amounts of data",
+        "answer": "Cold HDD (sc1)",
+        "wrongAnswers": [
+          "Provisioned IOPS (SSD)",
+          "Throughput Optimized (HDD) (st1)"
+        ],
+        "tags": [
+          "EBS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "What service provides a fully managed Windows file system on AWS",
+        "answer": "Amazon FSx for Windows File Server",
+        "wrongAnswers": [
+        ],
+        "tags": [
+          "FSx"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "What is a feature of FSx for Windows File Server that can save you from 30% or 80% on storage costs",
+        "answer": "Storage Deduplication",
+        "wrongAnswers": [
+        ],
+        "tags": [
+          "FSx"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "Data deduplication is a feature of ___",
+        "answer": "FSx for Windows Filer Server",
+        "wrongAnswers": [
+        ],
+        "tags": [
+          "FSx"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "Which service enables you to you provide a gateway from your on-prem storage (such as SAN, NAS, and DAS) to S3 and Amazon Glacier, securly and cost effeciently",
+        "answer": "AWS Storage Gateway",
+        "wrongAnswers": [
+        ],
+        "tags": [
+          "Storage Gateway"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "The pricing model for the File Gateway option of AWS Storage Gateway is",
+        "answer": "the same as S3",
+        "wrongAnswers": [
+          "the same as S3, except it charges per GB of data stored monthly for snapshots",
+          "depends on if you use S3, S3 Deep Glacier, and S3 Deep Glacier Deep Archive"
+        ],
+        "tags": [
+          "Storage Gateway"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "The pricing model for the Volume Gateway option of AWS Storage Gateway is",
+        "answer": "the same as S3, except it charges per GB of data stored monthly for snapshots",
+        "wrongAnswers": [
+          "the same as S3",
+          "depends on if you use S3, S3 Deep Glacier, and S3 Deep Glacier Deep Archive"
+        ],
+        "tags": [
+          "Storage Gateway"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "The pricing model for the Tape Gateway option of AWS Storage Gateway is",
+        "answer": "depends on if you use S3, S3 Deep Glacier, and S3 Deep Glacier Deep Archive",
+        "wrongAnswers": [
+          "the same as S3",
+          "the same as S3, except it charges per GB of data stored monthly for snapshots"
+        ],
+        "tags": [
+          "Storage Gateway"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "Which AWS service offers a centrilized location for backups of all storage services in all regions?",
+        "answer": "AWS Backup",
+        "wrongAnswers": [
+        ],
+        "tags": [
+          "AWS Backup"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "How do you create a backup with AWS Backup?",
+        "answer": "Create a backup policy (also known as a backup plan), and then attach a resource to the plan",
+        "wrongAnswers": [
+        ],
+        "tags": [
+          "AWS Backup"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "What are some way to benefit from cheaper storage when using AWS Backup?",
+        "answer": "By using cold storage, and lifecycle rules to delete objects after a period of time",
+        "wrongAnswers": [
+        ],
+        "tags": [
+          "AWS Backup"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "A company needs to maintain access logs for a minimum of five years due to regulatory requirements. The data is rarely accessed once stored but it must be accessible within one day's notice if it is needed. What is the most cost-effective data storage solution that meets these requirements?",
+        "answer": "Store the data in Amazon S3 Glacier Deep Archive storage and delete the objects after 5 years using a lifecycle rule",
+        "wrongAnswers": [
+          "Store the data in Amazon S3 Standard storage and transition to Amazon S3 Glacier after 30 days using a lifecycle rule",
+          "Store the data in logs using Amazon CloudWatch Logs and set the retentino period to 5 years",
+          "Store the data in Amazon S3 Standard-Infrequent Access (S3 Standard-IA) storage and delete the objects after 5 years using a lifecycle rule"
+        ],
+        "tags": [
+          "S3"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "When storing data in Amaon S3, you can define ___ to automatically archive sets of Amazon S3 objects to less expensive Amazon S3 storage classes",
+        "answer": "Lifecycle Rules",
+        "wrongAnswers": [
+          "Object versioning",
+          "Object encryption",
+          "AWS Glacier"
+        ],
+        "tags": [
+          "S3"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "A user has hosted objects on AWS in the bucket cloudacademy. Can a JavaScript of the website www.myvideos.com directly access the objects of the bucket?",
+        "answer": "Yes with S3 CORS support",
+        "wrongAnswers": [
+          "Yes with S3 IAM Support",
+          "No, it's a security violation",
+          "No, one domain cannot interact with the objects of another domain"
+        ],
+        "tags": [
+          "S3"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "An IT department manages a content management system (CMS) running on an Amazon EC2 instance mounted to an Elastic File System (EFS). The CMS throughput demands are high compared to the amount of data stored on the file system. What is the appropriate EFS configuration in this case?",
+        "answer": "Choose Provisioned Throughput mode for the file system",
+        "wrongAnswers": [
+          "Choose Bursting Throughput mode for the file system",
+          "Start with the General Purpose performance mode and update the file system to Max I/O if it reaches its I/O limit",
+          "Start with Bursting Throughput mode and update the file system to Max I/O if it reaches its I/O limit"
+        ],
+        "tags": [
+          "EFS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "A photo-sharing application uses a fleet of EC2 instances to assemble photos into a package that professional photographers can share with clients. To improve performance, the team uses multiple Amazon EC2 instances in parallel to resize and prepare each image with a watermark. Now, during the build process, the EC2 instances requires shared access to common storage to retrieve and save each photograph in the package. After the package is complete, it should be stored in the cloud so that only authorized clients can review the contents. Which of the following storage solutions will allow shared access between EC2 instances and enable clients access to the final package described in this scenario?",
+        "answer": "(1) Use Elastic File Storage (Amazon EFS) for persistent storage shared across EC2 instances. (2) Save client packages to a private Amazon S3 bucket and provide client access using a CloudFront signed URL",
+        "wrongAnswers": [
+          "(1) Use Elastic Block Storage (Amazon EBS) for persistent storage shared across EC2 instances. (2) Save packages to a private Amazon S3 bucket, create an IAM user for the client, and grant this user read access to the S3 bucket",
+          "(1) Use Elastic Block Storage (Amazon EBS) for persistent storage shared cross EC2 instances. (2) Save client packages to a private Amazon S3 bucket and provide client access using a CloudFront signed URL",
+          "(1) Use Elastic File Storage (Amazon EFS) for persistent storage shared across EC2 instances. (2) Save packages to a private Amazon S3 bucket, create an IAM user for the client, and grant this user read access to the S3 bucket"
+        ],
+        "tags": [
+          "EFS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "You have an unencrypted EBS volume that now needs to be encrypted in another region. How do you do this?",
+        "answer": "One way would be to take a snapshot of the volume, copy the snapshot to the correct region, create a new volume from that snapshot and then select 'encrypt' when creating the volume",
+        "wrongAnswers": [
+        ],
+        "tags": [
+          "EBS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "A research institution has a growing number of source code repositories hosted on multiple servers and managed by different IT departments. The institution plans to consolidate these repositories and deploy GitHub Enterprise Server on a single Amazon EC2 instance. The team needs to select the most appropriate Amazon storage service for the data volume of the instance running the GitHub server enterprise. Which of the following storage solutions would the team choose for this deployment?",
+        "answer": "Elastic Block Store (EBS)",
+        "wrongAnswers": [
+          "Elastic File Service (EFS)",
+          "Simple Storage Service (S3)",
+          "EC2 Instance Storage"
+        ],
+        "tags": [
+          "EBS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "A company maintains an on-premise data center and performs daily data backups to disk and tape storage to comply with regulatory requirements. The IT department is looking for an AWS cloud solution to backup its data. The IT department responsible for this project plans to continue maintaining the primary data onsite and is looking for an AWS cloud solution for data backup that will work well with their current archiving process. What should the following AWS storage services should the team choose to manage its data backup requirements?",
+        "answer": "AWS Tape Gateway",
+        "wrongAnswers": [
+          "AWS Volume Gateway",
+          "AWS File Gateway",
+          "AWS Glacier"
+        ],
+        "tags": [
+          "Storage Gateway"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "What is Requester Pay?",
+        "answer": "A setting in S3 that when enabled, the entity downloading data from that bucket will pay data transfer costs incurred",
+        "wrongAnswers": [
+        ],
+        "tags": [
+          "S3"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "To migrate data from on-prem to AWS EFS, with plans to stop using on-prem data afterwards, you should use",
+        "answer": "AWS DataSync",
+        "wrongAnswers": [
+          "AWS Storage Gateway"
+        ],
+        "tags": [
+          "EFS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "To migrate data from on-prem to AWS S3, with plans to use both in a hybrid way, you should use",
+        "answer": "AWS Storage Gateway",
+        "wrongAnswers": [
+          "AWS DataSync"
+        ],
+        "tags": [
+          "Storage Gateway"
         ]
       }
     ],
@@ -327,9 +753,9 @@
       },
       {
         "uuid": "",
-        "question": "By default, S3 data isn't duplicated to multiple AZs in your region",
+        "question": "For S3 to be duplicated to multiple AZs, you need to enable it",
         "answer": "False",
-        "popup": "Data is duplicated across multiple AZs in your region to increase durability and availabiily (depending on your Storage Class)",
+        "popup": "It is enabled by default with different durability and availability depending on your Storage Class (except for S3 Z-IA which is only one zone)",
         "tags": [
           "S3"
         ]
@@ -354,7 +780,7 @@
       },
       {
         "uuid": "",
-        "question": "Once S3 Versioning is enabled, it can't be disabled",
+        "question": "Once S3 Versioning is enabled, it can't be disabled, only suspended",
         "answer": "True",
         "popup": "It can only be suspended. All previous versions will still exist",
         "tags": [
@@ -387,16 +813,351 @@
         "tags": [
           "EFS"
         ]
+      },
+      {
+        "uuid": "",
+        "question": "KMS Customer Managed Keys (CMKs) can only be used by the service they were created for",
+        "answer": "True",
+        "popup": "",
+        "tags": [
+          "EFS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "EC2 instances need IAM policies to speak to EFS and its Mount Points",
+        "answer": "True",
+        "popup": "",
+        "tags": [
+          "EFS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "AWS DataSync lets you migrate data from an on-prem NFS file system to AWS EFS, migrate an NFS file system from an EC2 instance to EFS, and replicate data from EFS to another EFS in another region, even adding Lifecycle Managment to the files",
+        "answer": "True",
+        "popup": "",
+        "tags": [
+          "EFS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "AWS DataSync will keep your on-prem files and your EFS files syncronized while migrating to EFS",
+        "answer": "True",
+        "popup": "",
+        "tags": [
+          "EFS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "EC2 Instance Storage is great for critical or valuable data that you don't want to lose",
+        "answer": "False",
+        "popup": "",
+        "tags": [
+          "Instance Storage"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "Instance Storage is often used within a load balancing group, where data is replicated and pooled between the fleet of instances",
+        "answer": "True",
+        "popup": "",
+        "tags": [
+          "Instance Storage"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "EBS is great if you need high durability and availability of your data",
+        "answer": "False",
+        "popup": "You should use S3 or EFS instead - EBS Volumes are only stored in one AZ",
+        "tags": [
+          "EBS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "EBS volumes sit on the same host as the server that hosts the EC2 instance",
+        "answer": "False",
+        "popup": "EBS volumes are logically attached to the EC2 instance (over the AWS network) instead of directly connected at the hardward level like Instance Storage is",
+        "tags": [
+          "EBS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "There is a setting for EBS volumes to self-terminate or attach to another EC2 instance, when its connected EC2 instance terminates",
+        "answer": "True",
+        "popup": "",
+        "tags": [
+          "EBS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "When creating snapshots of an EBS volume, all data is stored in the snapshot",
+        "answer": "False",
+        "popup": "EBS Snapshots are Incremental. Meaning only data that has changed since the last snapshot is stored in the new snapshot",
+        "tags": [
+          "EBS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "You can create a new EBS volume using a snapshot",
+        "answer": "True",
+        "popup": "",
+        "tags": [
+          "EBS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "If an EBS volume is encrypted, its snapshots will be encrypted also",
+        "answer": "True",
+        "popup": "",
+        "tags": [
+          "EBS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "EBS volumes are only stored within one AZ",
+        "answer": "True",
+        "popup": "To make sure you don't lose your data, back it up with a snapshot so you can create another volume in another AZ",
+        "tags": [
+          "EBS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "EBS volumes can only be attached to EC2 instances within the same AZ",
+        "answer": "True",
+        "popup": "",
+        "tags": [
+          "EBS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "EBS volumes be attached to any EC2 instance within your region",
+        "answer": "False",
+        "popup": "They can only attach to EC2 instances within their same AZ in their region",
+        "tags": [
+          "EBS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "Every write to an EBS volume is replicated multiple times within the same AZ",
+        "answer": "True",
+        "popup": "",
+        "tags": [
+          "EBS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "There is a region specific setting to always encrypt EBS volumes",
+        "answer": "True",
+        "popup": "",
+        "tags": [
+          "EBS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "If running low, you can give an EBS volume more memory from the AWS console and CLI",
+        "answer": "True",
+        "popup": "",
+        "tags": [
+          "EBS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "EBS is great for data that is constantly changing with a high I/O rate",
+        "answer": "True",
+        "popup": "",
+        "tags": [
+          "EBS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "For Amazon FSx for Windows File Server, you are charged for throughput",
+        "answer": "True",
+        "popup": "",
+        "tags": [
+          "FSx"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "For Amazon FSx for Lustre, you are charged for throughput",
+        "answer": "False",
+        "popup": "You are charged for throughput using Amazon FSx for Windows File Server",
+        "tags": [
+          "FSx"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "FSx for Windows File Server is better for compute-intensive workloads (such as machine learning and HPC) than FSx for Lustre",
+        "answer": "False",
+        "popup": "Amazon FSx for Lustre is better for compute-intensive workloads",
+        "tags": [
+          "FSx"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "FSx for Windows File Server and FSx for Lustre both provide sub-millisecond latencies",
+        "answer": "True",
+        "popup": "",
+        "tags": [
+          "FSx"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "It's the same price to use FSx for Windows File Server in one AZ as it is multiple AZs",
+        "answer": "False",
+        "popup": "It is much more expensive to use multiple AZs",
+        "tags": [
+          "FSx"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "AWS Storage Gateway's, File Gateaway connects and syncs your on-prem data to S3",
+        "answer": "True",
+        "popup": "",
+        "tags": [
+          "Storage Gateway"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "AWS Storage Gateway's, Tape Gateway allows you to backup VTL (Virtual Tape Library) to S3, S3 Glacier, and S3 Glacier Deep Archive",
+        "answer": "True",
+        "popup": "",
+        "tags": [
+          "Storage Gateway"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "AWS Storage Gateway's Volume Gateway option consists of Stored Volume Gateway and Cached Volume Gateway",
+        "answer": "True",
+        "popup": "",
+        "tags": [
+          "Storage Gateway"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "AWS Storage Gateway's Volume Gateway's, Stored Volume Gateway backs up data to S3 as snapshots, but also keeps data on-prem for lower latencies",
+        "answer": "True",
+        "popup": "",
+        "tags": [
+          "Storage Gateway"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "AWS Storage Gateway's, Volume Gateway's, Cached Volume Gateway keeps data in S3, but caches recently accessed data for lower latencies",
+        "answer": "True",
+        "popup": "",
+        "tags": [
+          "Storage Gateway"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "In AWS Backup, through tags, you can create tag-based backup policies, to ensure you capture all of the required resources at once within your plan",
+        "answer": "True",
+        "popup": "",
+        "tags": [
+          "AWS Backup"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "AWS Backup provides warm and cold storage options through S3",
+        "answer": "True",
+        "popup": "",
+        "tags": [
+          "AWS Backup"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "There is always a charge retrieving datat with AWS Backup",
+        "answer": "False",
+        "popup": "It depends on the service being backed up. Sometimes it's free, other times it's based on a GB per month cost",
+        "tags": [
+          "AWS Backup"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "You can move data from S3 to S3 Glacier using a lifecycle rule",
+        "answer": "True",
+        "popup": "",
+        "tags": [
+          "S3"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "Users can get a Signed URL from CloudFront to temporarily view an S3 Object",
+        "answer": "True",
+        "popup": "",
+        "tags": [
+          "S3"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "You can create an encrypted snapshot from an unencrypted EBS volume",
+        "answer": "False",
+        "popup": "Either both are encrypted, or neither are",
+        "tags": [
+          "EBS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "You can copy EBS volume snapshots from one region to another",
+        "answer": "True",
+        "popup": "",
+        "tags": [
+          "EBS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "S3 sits inside of your VPC",
+        "answer": "False",
+        "popup": "It sits outside of your VPC and is accessed over the public internet",
+        "tags": [
+          "S3"
+        ]
       }
     ],
     "checkboxQuestions": [
       {
         "uuid": "",
-        "question": "What are the 3 main ways to control access to an S3 bucket?",
+        "question": "What are ways to control access to an S3 bucket?",
         "answers": [
-          "IAM policies",
-          "Bucket Policies",
-          "Access Control Lists (ACLs)"
+          "IAM policies (identity based policies)",
+          "Bucket Policies (resource based policies)",
+          "Access Control Lists (ACLs)",
+          "Option in bucket's settings to block all public access",
+          "Using CORS to determine who can make requests (in the bucket policy)"
         ],
         "wrongAnswers": [
         ],
@@ -464,6 +1225,81 @@
         ],
         "tags": [
           "EFS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "There are 2 types of KMS keys:",
+        "answers": [
+          "Keys imported to AWS from another key management application",
+          "Keys created and managed by KMS"
+        ],
+        "wrongAnswers": [
+        ],
+        "tags": [
+          "EFS"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "What are the forms of FSx?",
+        "answers": [
+          "Amazon FSx for Windows File Server",
+          "Amazon FSx for Lustre",
+          "Amazon FSx for Open ZFS",
+          "Amazon FSx for NetApp ONTAp"
+        ],
+        "wrongAnswers": [
+        ],
+        "tags": [
+          "FSx"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "What are the 3 options of AWS Storage Gateway",
+        "answers": [
+          "File Gateway",
+          "Volume Gateway",
+          "Tape Gateway"
+        ],
+        "wrongAnswers": [
+        ],
+        "tags": [
+          "Storage Gateway"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "What does a Backup Plan in the AWS Backup service consist of?",
+        "answers": [
+          "Backup schedule",
+          "Backup window",
+          "Lifecycle rules (such as when to move backups to cold storage)",
+          "A backup vault (where backups are encrypted with KMS encryption keys)",
+          "Copies across regions",
+          "Tags"
+        ],
+        "wrongAnswers": [
+        ],
+        "tags": [
+          "Storage Gateway"
+        ]
+      },
+      {
+        "uuid": "",
+        "question": "Amazon Elastic Block Store provides block level storage volumes for use with EC2 instances. EBS volumes are highly available and reliable storage volumes that can be attached to any running instance that is in the same availability zone. Which of the following would be considered a feature of EBS?",
+        "answers": [
+          "EBS volumes behave like raw, unformatted block devices. You can create a file system on top of these volumes, or use them in any other way you would use a block device (like a hard drive)",
+          "You can use encrypted EBS volumes to meet a wide range of data-at-rest encryption requirements for regulated/audited data and applications",
+          "You can create point-in-time snapshots of EBS volumes, which are persisted to Amazon S3. Snapshots protect data for long-term durability, and they can be used as the starting point for new EBS volumes"
+        ],
+        "wrongAnswers": [
+          "EBS volumes are created in a specific region, and can then be attached to any instances in that same region",
+          "Your account does not have a limit on the number of EBS volumes that you can use, and the total storage available to your is also unlimited"
+        ],
+        "tags": [
+          "EBS"
         ]
       }
     ]
